@@ -31,7 +31,6 @@ console.log(year);
 console.log(typeof year);
 
 console.log(typeof null);
-*/
 
 // Let - is a dynamic variable that can mutate and is not the best var declaration, as it can "dynamically" introduce bugs--LOL
 let age = 40;
@@ -48,3 +47,37 @@ job = "web developer";
 
 lastName = "Humperdink";
 console.log(lastName);
+*/
+
+// BASIC OPERATORS
+
+//Math operators
+const year = 2022;
+const ageDan = year - 1981;
+const ageJonas = year - 1991;
+console.log(ageDan, ageJonas);
+
+console.log(ageDan * 2, ageDan / 10, 2 ** 3);
+// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+
+// Concantenate or join vars using the + operator
+const firstName = "Dan";
+const lastName = "V";
+console.log(firstName + " " + lastName);
+
+//Assignment operators
+let x = 10 + 5;
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x++; // x = x + 1 = 101
+x--;
+x--;
+console.log(x);
+
+// Comparison operators
+console.log(ageDan > ageJonas); // >, <, >=, <=
+console.log(ageJonas >= 18); // At least 18?
+
+const isOfAge = ageJonas >= 18;
+
+console.log(year - 1981 > year - 1991);
