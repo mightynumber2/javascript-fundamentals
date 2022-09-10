@@ -50,6 +50,7 @@ console.log(lastName);
 
 ////////////////////////////////
 // BASIC OPERATORS
+
 //Math operators
 const year = 2022;
 const ageDan = year - 1981;
@@ -80,7 +81,6 @@ console.log(ageJonas >= 18); // At least 18?
 const isOfAge = ageJonas >= 18;
 
 console.log(year - 1981 > year - 1991);
-*/
 
 // Precedence
 const year = 2022;
@@ -100,3 +100,30 @@ console.log(x, y);
 // wrong: const avgAge = ageDan + ageJonas / 2;
 const avgAge = (ageDan + ageJonas) / 2;
 console.log(ageDan, ageJonas, avgAge);
+*/
+
+////////////////////////////////
+// STRINGS AND TEMPLATE LITERALS
+
+const firstName = 'Dan';
+const job = 'software engineer';
+const birthYear = 1981;
+const year = 2022;
+
+const dan =
+  "I'm " + firstName + ', a ' + (year - birthYear) + '-year-old ' + job;
+console.log(dan);
+
+console.log('String with \n\
+multiple \n\
+lines');
+
+// Template literal version
+const danNew = `I'm ${firstName}, a ${year - birthYear}-year-old ${job}!`;
+console.log(danNew);
+
+console.log(`String with
+multiple
+lines
+thanks to
+template literal`);
