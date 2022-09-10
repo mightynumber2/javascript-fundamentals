@@ -100,7 +100,6 @@ console.log(x, y);
 // wrong: const avgAge = ageDan + ageJonas / 2;
 const avgAge = (ageDan + ageJonas) / 2;
 console.log(ageDan, ageJonas, avgAge);
-*/
 
 ////////////////////////////////
 // STRINGS AND TEMPLATE LITERALS
@@ -111,7 +110,7 @@ const birthYear = 1981;
 const year = 2022;
 
 const dan =
-  "I'm " + firstName + ', a ' + (year - birthYear) + '-year-old ' + job;
+"I'm " + firstName + ', a ' + (year - birthYear) + '-year-old ' + job;
 console.log(dan);
 
 console.log('String with \n\
@@ -127,3 +126,38 @@ multiple
 lines
 thanks to
 template literal`);
+*/
+
+////////////////////////////////
+// IF/ELSE STATEMENTS
+
+const age = 16;
+// A control structure
+if (age >= 18) {
+  console.log("Bebop can go for his driver's license 🚙");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(
+    `Bebop cannot go for his driver's license for another ${yearsLeft} years 😪`
+  );
+}
+
+/*
+const birthYear = 1981;
+if (birthYear <= 2000) {
+  let century = 20;
+  console.log(century);
+} else {
+  let century = 21;
+  console.log(century);
+}
+*/
+
+const birthYear = 1981;
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
