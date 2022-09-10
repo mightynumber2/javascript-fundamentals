@@ -94,4 +94,27 @@ if (population > 33) {
     `${country}'s population is ${33 - population} million below average`
     );
   }
+  
+  LECTURE: Type Conversion and Coercion
+  1. Predict the result of these 5 operations without executing them:
+  '9' - '5';
+  '19' - '13' + '17';
+  '19' - '13' + 17;
+  '123' < 57;
+  5 + 6 + '4' + 9 - 4 - 2;
+  
+  2. Execute the operations to check if you were right
+  
+  // 1
+  4;
+  ("617");
+  23;
+  false;
+  ("56492"); // x 11 + "4" + 3 = "1143"
+  // 2
+  console.log("9" - "5");
+  console.log("19" - "13" + "17");
+  console.log("19" - "13" + 17);
+  console.log("123" < 57);
+  console.log(5 + 6 + "4" + 9 - 4 - 2); // 1143
   */
