@@ -215,4 +215,44 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED!");
 }
-*/
+
+////////////////////////////////
+// EQUALITY OPERATORS == VS ===
+
+const age = 18;
+// strict equality operator, no type coercion
+if (age === 18) console.log("You just became an adult :D (strict)");
+
+const ageString = "18";
+//  AVOID loose equality operator, yes type coercion
+if (ageString == 18)
+console.log(
+  "You just became an adult :D (loose - has weird rules that can introduct hard-to-track bugs)"
+  );
+  
+  // ==
+  const favorite = prompt("What is your favorite number (loose)?");
+  console.log(favorite);
+  console.log(typeof favorite);
+  
+  if (favorite == 7) console.log("Great! That's God's number (loose)");
+  
+  // === using Number function
+  const favoriteNum = Number(prompt("What is your favorite number?"));
+  console.log(favoriteNum);
+  console.log(typeof favoriteNum);
+  
+  // Check several conditions before the final else-block
+  if (favoriteNum === 7) {
+    console.log("Great! That's God's number");
+  } else if (favoriteNum === 41) {
+    console.log("Awesome! That's my age");
+  } else if (favoriteNum === 16) {
+    console.log("Neat! That's my son's age");
+  } else {
+    console.log("You didn't enter 7, 41, or 16 💩");
+  }
+  
+  // Does not equal or different operator, !== strict, != loose
+  if (favoriteNum !== 7) console.log("Why not try 7?");
+  */
