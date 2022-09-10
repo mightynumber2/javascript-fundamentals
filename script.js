@@ -126,7 +126,6 @@ multiple
 lines
 thanks to
 template literal`);
-*/
 
 ////////////////////////////////
 // IF/ELSE STATEMENTS
@@ -139,8 +138,9 @@ if (age >= 18) {
   const yearsLeft = 18 - age;
   console.log(
     `Bebop cannot go for his driver's license for another ${yearsLeft} years 😪`
-  );
-}
+    );
+  }
+  */
 
 /*
 const birthYear = 1981;
@@ -151,7 +151,6 @@ if (birthYear <= 2000) {
   let century = 21;
   console.log(century);
 }
-*/
 
 const birthYear = 1981;
 let century;
@@ -161,3 +160,34 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
+
+////////////////////////////////
+// TYPE CONVERSION AND COERCION
+
+// Type Conversion
+const inputYear = "1981";
+console.log(Number(inputYear), inputYear);
+console.log(inputYear + 18);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Dan"));
+console.log(typeof NaN);
+
+console.log(String(41), 41);
+
+// Type Coercion
+// + converts to string
+console.log("I am " + 41 + " years old"); // num to string
+console.log("41" + "10" + 3); // 41103, num to string
+// converts to num
+console.log("41" - "10" - 3); // 28, string to num
+console.log("41" * 3); // 123, string to num
+console.log("41" / "10"); // 4.1, string to num
+
+let n = "1" + 1; // "11"
+n = n - 1; // "11" - 1 = 11 - 1
+console.log(n); // 10
+
+console.log(2 + 3 + 4 + "5"); // 9 + "5" = "95"
+console.log("10" - "4" - "3" - 2 + "5"); // 1 + "5" = "15"
+*/
