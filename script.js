@@ -47,10 +47,9 @@ job = "web developer";
 
 lastName = "Humperdink";
 console.log(lastName);
-*/
 
+////////////////////////////////
 // BASIC OPERATORS
-
 //Math operators
 const year = 2022;
 const ageDan = year - 1981;
@@ -81,3 +80,23 @@ console.log(ageJonas >= 18); // At least 18?
 const isOfAge = ageJonas >= 18;
 
 console.log(year - 1981 > year - 1991);
+*/
+
+// Precedence
+const year = 2022;
+const ageDan = year - 1981;
+const ageJonas = year - 1991;
+
+console.log(year - 1981 > year - 1991);
+
+// You can assign mutliple vars at once!
+let x, y; // undefined
+
+// Subtraction has higher precedence
+// assignment operators go right-to-left
+x = y = 25 - 10 - 5; // in order: 10, y = 10, x = 10
+console.log(x, y);
+
+// wrong: const avgAge = ageDan + ageJonas / 2;
+const avgAge = (ageDan + ageJonas) / 2;
+console.log(ageDan, ageJonas, avgAge);
