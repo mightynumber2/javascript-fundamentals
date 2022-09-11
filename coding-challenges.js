@@ -24,7 +24,6 @@ m tall.
 m tall.
 
 GOOD LUCK � 
-*/
 
 // Data 1
 let markWeight1 = 78;
@@ -36,7 +35,7 @@ const johnHeight1 = 1.95;
 // console.log("John's D-1 BMI: " + johnWeight1 / (johnHeight1 * johnHeight1));
 
 let markHigherBMI =
-  markWeight1 / markHeight1 ** 2 > johnWeight1 / johnHeight1 ** 2;
+markWeight1 / markHeight1 ** 2 > johnWeight1 / johnHeight1 ** 2;
 // console.log(markHigherBMI);
 
 // Data 2
@@ -53,6 +52,7 @@ const johnBMI = johnWeight2 / (johnHeight2 * johnHeight2);
 
 markHigherBMI = markBMI > johnBMI;
 // console.log(markHigherBMI);
+*/
 
 /*
 Coding Challenge #2
@@ -82,5 +82,38 @@ if (markBMI > johnBMI) {
   console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
 } else {
   console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+}
+*/
+
+//Coding Challenge #3///////////////////
+
+// 1.
+/*
+const dolphins = 98 //(96 + 108 + 89) / 3;
+console.log(dolphins);
+const koalas = 96 //(88 + 91 + 110) / 3;
+console.log(koalas);
+// 2.
+if (dolphins > koalas) {
+  console.log("Dolphins are the winners!");
+} else if (dolphins === koalas) {
+  console.log("We have a draw 😲")
+} else {
+  console.log("Koalas are the winners!");
+}
+// 3-4. Bonus 1 & 2:
+const dolphins = 103 //103 (97 + 112 + 101) / 3;
+console.log(dolphins);
+const koalas = 109 //109 (109 + 95 + 123) / 3;
+console.log(koalas);
+
+if (dolphins > koalas && dolphins >= 100) {
+  console.log("Dolphins are the winners!");
+} else if (dolphins === koalas && dolphins >= 100 && koalas >= 100) {
+  console.log("We have a draw 😲");
+} else if (koalas >= 100) {
+  console.log("Koalas are the winners!");
+} else {
+  console.log("We have no winners!");
 }
 */
