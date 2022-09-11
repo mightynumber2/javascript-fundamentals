@@ -293,4 +293,51 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
   console.log("Someone else should drive")
 }
+
+////////////////////////////////
+// THE SWITCH STATEMENT
+
+// Alt way of handling complex if/else statements
+// with more--but less repetitive--code 
+const day = "monday";
+
+switch (day) {
+  case 'monday': // day === 'monday'; strict
+    console.log("Morning javascript on udemy");
+    console.log("Do Insanity workout");
+    break;
+  case 'tuesday':
+    console.log("Attend 100devs class");
+    break;
+  case 'wednesday':
+  case 'thursday':
+    console.log("More udemy javascript and 100devs");
+    break;
+  case 'friday':
+    console.log("Start work on wife's college homework");
+    break;
+  case 'saturday':
+  case 'sunday':
+    console.log("Rest as God commanded, but also do some more college homework");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+// More popular if/else version constains repetitive code
+const day = "monday";
+
+if (day === "monday") {
+  console.log("Morning javascript on udemy");
+  console.log("Do Insanity workout");
+} else if (day === "tuesday") {
+  console.log("Attend 100devs class");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("More udemy javascript and 100devs");
+} else if (day === "friday") {
+  console.log("Start work on wife's college homework");
+} else if (day === "saturday" || day === "sunday" ) {
+  console.log("Rest as God commanded, but also do some more college homework");
+} else {
+  console.log("Not a valid day!");
+}
 */
