@@ -178,4 +178,15 @@ switch (language) {
   default:
     console.log("Great language too :D")
 }
+
+////////////////////////////////////////////
+// LECTURE: The Conditional (Ternary) Operator
+
+// 1.
+const pop = 332;
+const country = "America";
+
+// pop > 33 ? console.log("America's population is above average") : console.log("America's population is below average");
+
+console.log(`${country}'s population is ${pop > 33 ? 'above average' : 'below average'}`);
 */
