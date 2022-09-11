@@ -116,4 +116,12 @@ if (dolphins > koalas && dolphins >= 100) {
 } else {
   console.log("We have no winners!");
 }
+
+//Coding Challenge #3///////////////////
+// 1.
+const bill = 430;
+const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.20 * bill;
+console.log(tip);
+// 2.
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
 */
