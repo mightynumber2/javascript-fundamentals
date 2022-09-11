@@ -255,4 +255,42 @@ console.log(
   
   // Does not equal or different operator, !== strict, != loose
   if (favoriteNum !== 7) console.log("Why not try 7?");
-  */
+
+
+////////////////////////////////
+// LOGICAL OPERATORS
+
+const hasDriversLicense = true;
+const hasGoodVision = false;
+const hasGlasses = true;
+// And operator, both must be true
+console.log(hasDriversLicense && hasGoodVision);
+// Or operator, only one must be true
+console.log(hasDriversLicense || hasGoodVision);
+// Not is inverted
+console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//   console.log("Bebop is able to drive");
+// } else if (hasDriversLicense && hasGlasses) {
+//   console.log("Bebop can still drive");
+// } else {
+//   console.log("Someone else should drive...");
+// }
+
+if (hasDriversLicense && hasGoodVision || hasGlasses) {
+  console.log("Bebop is able to drive");
+} else {
+  console.log("Someone else should drive...");
+}
+*/
+/*
+const hasDriversLicense = true;
+const hasGoodVision = true;
+const isTired = true;
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log("Bebop is able to drive")
+} else {
+  console.log("Someone else should drive")
+}
+*/
