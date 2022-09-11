@@ -340,4 +340,18 @@ if (day === "monday") {
 } else {
   console.log("Not a valid day!");
 }
+
+////////////////////////////////
+// STATEMENTS AND EXPRESSIONS
+
+// Expressions are code that cough up a value
+3 + 4
+1991
+"Danny"
+
+// Statements do not give a value, but a declaration and/or an action
+// a complete sentence
+if (3 / 4) {}
+
+switch (day) {}
 */
