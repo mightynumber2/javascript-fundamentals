@@ -341,8 +341,6 @@ if (day === "monday") {
   console.log("Not a valid day!");
 }
 
-////////////////////////////////
-// STATEMENTS AND EXPRESSIONS
 
 // Expressions are code that cough up a value
 3 + 4
@@ -354,4 +352,31 @@ if (day === "monday") {
 if (3 / 4) {}
 
 switch (day) {}
+
+////////////////////////////////
+// THE CONDITIONAL (TERNARY) OPERATOR
+
+const age = 16;
+// Ternary: condition, if, and else
+// age >= 21 ? console.log("I like to drink me some beers! 🍺") : console.log("Guess I'll have me water... 💧");
+
+const drink = age >= 21 ? "beer! 🍺" : "water 💧";
+console.log(drink);
+
+let drink2;
+if (age >= 21) {
+  drink2 = "beer! 🍺";
+} else {
+  drink2 = "water 💧";
+}
+console.log(drink2);
+
+// Since the ternary is an expression that produces a value
+// and not a statement
+// it can be used in template literals
+console.log(`Since I'm ${age}, I will drink some ${age >= 21 ? "beer! 🍺" : "water 💧"}`)
+
+// A ternary is not a replacement for an if/else
+// the ternary is an expression and the if/else is a statement
+// the if/else is needed for more complex conditions
 */
