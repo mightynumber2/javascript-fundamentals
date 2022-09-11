@@ -5,7 +5,7 @@
 // assign their values according to your own country (population in millions)
 // let country = "United States";
 // let continent = "North America";
-let population = 332;
+//let population = 332;
 
 // 2. Log their values to the console
 // console.log(country);
@@ -29,13 +29,13 @@ let population = 332;
 // Lecture: let, const and var
 // 1. Set the value of 'language' to the language spoken where you live (some
 // countries have multiple languages, but just choose one)
-const language = "English";
+//const language = "English";
 
 // 2. Think about which variables should be const variables (which values will never
 // change, and which might change?). Then, change these variables to const.
-const isIsland = false;
-const country = "The United States";
-const continent = "North America";
+//const isIsland = false;
+//const country = "The United States";
+//const continent = "North America";
 
 // 3. Try to change one of the changed variables now, and observe what happens
 // language = "Spanish";
@@ -46,7 +46,7 @@ const continent = "North America";
 // console.log(population / 2);
 
 // 2. Increase the population of your country by 1 and log the result to the console
-population++;
+//population++;
 // console.log(population);
 
 // 3. Finland has a population of 6 million. Does your country have more people than
@@ -73,7 +73,7 @@ population++;
 // LECTURE: Strings and Template Literals
 // 1. Recreate the 'description' variable from the last assignment, this time
 // using the template literal syntax
-const description = `${country} is in ${continent}, and its ${population} million people speak ${language}.`;
+//const description = `${country} is in ${continent}, and its ${population} million people speak ${language}.`;
 // console.log(description);
 
 /*
@@ -133,5 +133,21 @@ if (numNeighbors === 1) {
   console.log("More than 1 border");
 } else {
   console.log("No borders");
+}
+*/
+/*
+////////////////////////////////////////////
+// LECTURE: Logical Operators
+
+let population = 332;
+const language = "English";
+const country = "America";
+const continent = "North America";
+const isIsland = false;
+
+if (language === "English" && population < 50 && !isIsland) {
+  console.log(`You should live in ${country} :)`);
+} else {
+  console.log(`${country} does not meet your criteria :(`);
 }
 */
