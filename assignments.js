@@ -189,4 +189,23 @@ const country = "America";
 // pop > 33 ? console.log("America's population is above average") : console.log("America's population is below average");
 
 console.log(`${country}'s population is ${pop > 33 ? 'above average' : 'below average'}`);
+
+////////////////////////////////////////////
+// LECTURE: Functions
+
+// 1.
+function describeCountry(country, population, capitalCity) {
+  return `${country} has ${population} million people and its capital city is ${capitalCity}`;
+  // return stats;
+}
+// 2.
+const us = describeCountry("The United States", 332, "Washington D.C.");
+console.log(us);
+
+const sKorea = describeCountry("South Korea", 52, "Seoul");
+console.log(sKorea);
+
+const china = describeCountry("China", 14000, "Beijing");
+console.log(china);
 */
+
