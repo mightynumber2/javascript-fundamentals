@@ -231,4 +231,19 @@ const usPercent2 = percentageOfWorld2(332);
 const sKoreaPercent2 = percentageOfWorld2(52);
 const chinaPercent2 = percentageOfWorld2(1400);
 console.log(usPercent2, sKoreaPercent2, chinaPercent2);
+
+////////////////////////////////////////////
+// LECTURE: Arrow Functions
+
+// Function expression
+const percentageOfWorld2 = function (population) {
+  return (population / 7900) * 100;
+}
+// Arrow version
+const percentageOfWorld3 = population => (population / 7900) * 100;
+
+const usPercent3 = percentageOfWorld3(332);
+const sKoreaPercent3 = percentageOfWorld3(52);
+const chinaPercent3 = percentageOfWorld3(1400);
+console.log(usPercent3, sKoreaPercent3, chinaPercent3);
 */
