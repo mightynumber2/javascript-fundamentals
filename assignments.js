@@ -207,5 +207,28 @@ console.log(sKorea);
 
 const china = describeCountry("China", 14000, "Beijing");
 console.log(china);
-*/
 
+////////////////////////////////////////////
+// LECTURE: Function Declarations vs. Expressions
+
+// Function declaration
+const usPercent1 = percentageOfWorld1(332);
+const sKoreaPercent1 = percentageOfWorld1(52);
+const chinaPercent1 = percentageOfWorld1(1400);
+console.log(usPercent1, sKoreaPercent1, chinaPercent1);
+
+function percentageOfWorld1(population){
+  return (population / 7900) * 100;
+}
+
+
+// Function expression
+const percentageOfWorld2 = function (population) {
+  return (population / 7900) * 100;
+}
+
+const usPercent2 = percentageOfWorld2(332);
+const sKoreaPercent2 = percentageOfWorld2(52);
+const chinaPercent2 = percentageOfWorld2(1400);
+console.log(usPercent2, sKoreaPercent2, chinaPercent2);
+*/
