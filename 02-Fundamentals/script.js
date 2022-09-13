@@ -58,4 +58,33 @@ const ageCalc2 = function (birthYear) {
 }
 const age2 = ageCalc2(1981);
 console.log(age1, age2);
+
+////////////////////////////////////////
+// ARROW FUNCTIONS
+
+// Function expression
+const ageCalc2 = function (birthYear) {
+  return 2022 - birthYear;
+}
+// Arrow function version = short-hand expression
+const ageCalc3 = birthYear => 2022 - birthYear;
+
+const age3 = ageCalc3(1981);
+console.log(age3);
+
+// multi-code arrow function
+const yearsToRetire = (birthYear, firstName) => {
+  const age = 2022 - birthYear;
+  const retireAge = 65 - age;
+  // return retireAge;
+  return `${firstName} retires in ${retireAge} years`
+}
+console.log(yearsToRetire(1981, "Dan"));
+console.log(yearsToRetire(1984, "Kristy"));
+
+// same as above, but in one line
+const yearsToRetire2 = (birthYear, firstName) => `${firstName} retires in ${65 - (2022 - birthYear)} years`
+
+console.log(yearsToRetire2(1981, "Dan"));
+console.log(yearsToRetire2(1984, "Kristy"));
 */
