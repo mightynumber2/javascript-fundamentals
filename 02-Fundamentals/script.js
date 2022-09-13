@@ -107,3 +107,27 @@ console.log(yearsToRetire2(1984, "Kristy"));
 // const foodProcessor = (apples, oranges) => `Juice with ${cutFruit(apples)} pieces of apple and ${cutFruit(oranges)} pieces of orange.`
 
 // console.log(foodProcessor(1, 3));
+
+////////////////////////////////////////
+// REVIEWING FUNCTIONS
+/*
+const calcBirth = function (birthYear) {
+  return 2022 - birthYear;
+}
+
+const yearsToRetire = function (birthYear, firstName) {
+  const age = calcBirth(birthYear);
+  const retireYears = 65 - age;
+
+  if (retireYears > 0) {
+    console.log(`${firstName} can retire in ${retireYears} more years`);
+    return retireYears;
+  } else {
+    console.log(`${firstName} has already retired ${retireYears * -1} years ago!`)
+    return -1;
+  }
+}
+
+console.log(yearsToRetire(1950, "Dan"));
+console.log(yearsToRetire(1984, "Kristy"));
+*/
