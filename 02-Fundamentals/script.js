@@ -88,3 +88,22 @@ const yearsToRetire2 = (birthYear, firstName) => `${firstName} retires in ${65 -
 console.log(yearsToRetire2(1981, "Dan"));
 console.log(yearsToRetire2(1984, "Kristy"));
 */
+
+////////////////////////////////////////
+// FUNCTIONS CALLING OTHER FUNCTIONS
+
+// const cutFruit = function (fruit) {
+  //   return fruit * 4;
+  // }
+  // const cutFruit = fruit => fruit * 4;
+  
+  // function foodProcessor(apples, oranges) {
+//   const applePieces = cutFruit(apples);
+//   const orangePieces = cutFruit(oranges);
+
+//   const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+//   return juice;
+// }
+// const foodProcessor = (apples, oranges) => `Juice with ${cutFruit(apples)} pieces of apple and ${cutFruit(oranges)} pieces of orange.`
+
+// console.log(foodProcessor(1, 3));
