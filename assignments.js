@@ -246,4 +246,15 @@ const usPercent3 = percentageOfWorld3(332);
 const sKoreaPercent3 = percentageOfWorld3(52);
 const chinaPercent3 = percentageOfWorld3(1400);
 console.log(usPercent3, sKoreaPercent3, chinaPercent3);
+
+////////////////////////////////////////////
+// LECTURE: Functions Calling Other Functions
+
+const percentageOfWorld1 = population => (population / 7900) * 100;
+
+const describePopulation = (country, population) => console.log(`${country} has ${population} million people, which is about ${percentageOfWorld1(population)} of the world.`)
+
+describePopulation("The US", 332);
+describePopulation("South Korea", 52);
+describePopulation("China", 1400);
 */
