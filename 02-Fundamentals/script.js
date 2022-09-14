@@ -130,4 +130,51 @@ const yearsToRetire = function (birthYear, firstName) {
 
 console.log(yearsToRetire(1950, "Dan"));
 console.log(yearsToRetire(1984, "Kristy"));
+
+
+////////////////////////////////////////
+// INTRO TO ARRAYS
+
+const friends1 = "Matthew";
+const friends2 = "Ricky";
+const friends3 = "Joe";
+
+// the literal syntax
+const friends = ["Matthew", "Ricky", "Joe"];
+// console.log(friends);
+// console.log(friends[1]);
+
+// alt using the function
+// const years = new Array(1981, 1984, 2006, 2022);
+// console.log(years);
+// console.log(years[2])
+// console.log(years[years.length - 1]);
+// Arrays are mutable and can be mutated
+friends[2] = "Sam";
+// console.log(friends);
+// however, you cannot replace the entire array
+//friends = ["John", "Candy"];
+//friends = ["John", "Candy", "Man"];
+//console.log(friends);
+
+// Arrays accept expressions
+const firstName = "Dan";
+const birthYeah = 1981;
+const dan = [firstName, "V", 2022 - birthYeah, "software engineer", friends];
+// console.log(dan);
+// console.log(dan[dan.length -2]);
+
+// Exercise
+const calcAge = function (birthYeah) {
+  return 2022 - birthYeah;
+} 
+const years = [1981, 1984, 2006, 1958, 2001];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
 */
