@@ -257,4 +257,16 @@ const describePopulation = (country, population) => console.log(`${country} has 
 describePopulation("The US", 332);
 describePopulation("South Korea", 52);
 describePopulation("China", 1400);
+
+////////////////////////////////////////////
+// LECTURE: Introduction to Arrays
+
+const populations = [332, 52, 1400, 10];
+console.log(populations.length === 4);
+
+const percentageOfWorld1 = function (population) {
+  return (population / 7900) * 100;
+}
+const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[populations.length -1])];
+console.log(percentages);
 */
