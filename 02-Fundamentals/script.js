@@ -177,4 +177,36 @@ console.log(age1, age2, age3);
 
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
+
+////////////////////////////////////////
+// BASIC ARRAY OPERATIONS (METHODS)
+
+// add elements to an array
+const friends = ["Matt", "Bone", "Sam"];
+const newLength = friends.push("Leon"); // add to end
+console.log(friends);
+console.log(newLength);
+
+friends.unshift("Albert"); // add to start
+console.log(friends);
+
+// remove elements from an array
+friends.pop(); // remove last
+const namePopped = friends.pop();
+console.log(namePopped);
+console.log(friends);
+
+friends.shift(); // remove first
+console.log(friends);
+
+// find element's current position in array
+console.log(friends.indexOf("Bone"));
+console.log(friends.indexOf("Ricky"));
+// conditional boolean method
+friends.push(23); // uses strict equality
+console.log(friends.includes("Bone"));
+console.log(friends.includes("Ricky"));
+console.log(friends.includes(23));
+
+friends.includes("Ricky") ? console.log("You have a friend named Ricky") : console.log("You do not have Ricky as a friend");
 */
