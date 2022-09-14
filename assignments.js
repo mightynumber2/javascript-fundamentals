@@ -269,4 +269,37 @@ const percentageOfWorld1 = function (population) {
 }
 const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[populations.length -1])];
 console.log(percentages);
+
+////////////////////////////////////////////
+// LECTURE: Basic Array Operations (Methods)
+
+// 1.
+const neighbours = ["Canada", "Mexico"];
+console.log(neighbours);
+// 2.
+neighbours.push("Utopia");
+console.log(neighbours);
+// 3.
+neighbours.pop();
+console.log(neighbours);
+// 4.
+if (!neighbours.includes("Germany")) {
+  console.log("Probably not a central European country :D");
+} else {
+  console.log("Probably IS a central European country :D");
+}
+// 5.
+// console.log(neighbours.indexOf("Mexico"));
+// neighbours[1] = "Germany";
+neighbours[neighbours.indexOf("Mexico")] = "Germany"; 
+console.log(neighbours);
+// retest!
+if (!neighbours.includes("Germany")) {
+  console.log("Probably not a central European country :D");
+} else {
+  console.log("Probably IS a central European country :D");
+}
 */
+
+
+
