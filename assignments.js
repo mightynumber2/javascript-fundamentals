@@ -299,7 +299,17 @@ if (!neighbours.includes("Germany")) {
 } else {
   console.log("Probably IS a central European country :D");
 }
-*/
 
+////////////////////////////////////////////
+// LECTURE: Introduction to Objects
+
+const myCountry = {
+  country: "The US",
+  capital: "Washington D.C.",
+  language: "english",
+  population: 332,
+  neighbours: ["Canada", "Mexico", "Utopia"]
+};
+*/
 
 
