@@ -172,4 +172,32 @@ console.log(bills, tips);
 // 4.
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(total); // 143.75, 666, 52.8
+
+//Coding Challenge #3///////////////////
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    return this.BMI = this.mass / this.height ** 2;
+  }
+};
+// BMI = mass / height ** 2 = mass
+// / (height * height) (mass in kg and height in meter)
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    return this.BMI = this.mass / (this.height * this.height);
+  }
+};
+
+console.log(mark.calcBMI(), john.calcBMI());
+if (mark.BMI > john.BMI) {
+  console.log(`${mark.fullName}'s BMI(${mark.BMI}) is higher than ${john.fullName}'s (${john.BMI})!`);
+} else {
+  console.log(`${john.fullName}'s BMI(${john.BMI}) is higher than ${mark.fullName}'s (${mark.BMI})!`);
+}
 */
