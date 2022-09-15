@@ -327,4 +327,32 @@ console.log(`${myCountry.country} has ${myCountry.population} million ${myCountr
 myCountry.population += 2;
 myCountry["population"] -= 2;
 console.log(myCountry.population);
+
+////////////////////////////////////////////
+// LECTURE: Object Methods
+
+const myCountry = {
+  country: "The US",
+  capital: "Washington D.C.",
+  language: "english",
+  population: 332,
+  neighbours: ["Canada", "Mexico", "Utopia"],
+  // 1.
+  describe: function () {
+    return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`
+  },
+  
+  checkIsland: function () {
+    return this.isIsland = this.neighbours.length === 0 ? true : false;
+  }
+};
+// 2.
+console.log(myCountry.describe());
+// 3.
+console.log(myCountry.checkIsland());
 */
+
+
+
+
+
