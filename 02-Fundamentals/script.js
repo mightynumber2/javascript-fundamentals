@@ -209,4 +209,25 @@ console.log(friends.includes("Ricky"));
 console.log(friends.includes(23));
 
 friends.includes("Ricky") ? console.log("You have a friend named Ricky") : console.log("You do not have Ricky as a friend");
+
+////////////////////////////////////////
+// INTRO TO OBJECTS
+
+// arrays contain orderly values
+const danArray = [
+  "Dan",
+  "V",
+  2022 - 1981,
+  "software engineer",
+  ["Matt", "Bone", "Sam"]
+];
+
+// objects are unorderly and contain the names and values, or keys/values
+const dan = {
+  firstName: "Dan",
+  lastName: "V",
+  age: 2022 - 1981,
+  job: "software engineer",
+  friends: ["Matt", "Bone", "Sam"]
+};
 */
