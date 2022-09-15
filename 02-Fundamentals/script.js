@@ -270,4 +270,40 @@ dan["twitter"] = "@vwagonforever";
 // Challenge
 // "Dan has 3 friends, and his best friend is called Sam"
 console.log(`${dan.firstName} has ${dan.friends.length} friends, and his best friend is called ${dan.friends[dan.friends.length - 1]}`);
-*/
+
+////////////////////////////////////////
+// Object Methods
+
+const dan = {
+  firstName: "Dan",
+  lastName: "Volkswagon",
+  birthYeah: 1981,
+  job: "software engineer",
+  friends: ["Matt", "Bone", "Sam"],
+  hasDriversLicense: true,
+  // Arrow functions can't use 'this' keyword!
+  // calcAge: birthYeah => 2022 - birthYeah
+  
+  // calcAge: function () {
+    //   return 2022 - this.birthYeah; // this object
+    // }
+    calcAge: function () {
+      return this.age = 2022 - this.birthYeah;
+    },
+    
+    getSummary: function () {
+      return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+    }
+  };
+  // The method must be called first in order to be defined!
+  // console.log(dan.calcAge());
+  
+  // console.log(dan.age);
+  // console.log(dan["age"]);
+  
+  // Challenge: write "getSummary" method
+  // "Dan is a 41-year old software engineer, and he has a/no
+  // driver's license"
+  // dan.hasDriversLicense = false;
+  console.log(dan.getSummary());
+  */
