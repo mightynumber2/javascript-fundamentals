@@ -231,3 +231,43 @@ const dan = {
   friends: ["Matt", "Bone", "Sam"]
 };
 */
+
+////////////////////////////////////////
+// Dot vs Bracket Notation
+/*
+const dan = {
+  firstName: "Dan",
+  lastName: "Volkswagon",
+  age: 2022 - 1981,
+  job: "software engineer",
+  friends: ["Matt", "Bone", "Sam"]
+};
+// console.log(dan);
+
+// console.log(dan.lastName);
+// console.log(dan["lastName"]);
+
+const nameKey = "Name";
+// console.log(dan["first" + nameKey], dan["last" + nameKey] );
+
+// const interestedIn = prompt("What do you want to know about Dan? Choose between firstName, lastName, age, job and friends");
+// the object notion accepts expressions, unlike the dot
+// console.log(dan.interestedIn); No worky
+// console.log(dan[interestedIn]);
+
+// if (dan[interestedIn]) {
+//   console.log(dan[interestedIn]);
+// } else {
+//   console.log("That is not an option, try again...");
+// }
+
+// Add to objects
+// dot notation
+dan.location = "Arizona";
+dan["twitter"] = "@vwagonforever";
+// console.log(dan);
+
+// Challenge
+// "Dan has 3 friends, and his best friend is called Sam"
+console.log(`${dan.firstName} has ${dan.friends.length} friends, and his best friend is called ${dan.friends[dan.friends.length - 1]}`);
+*/
