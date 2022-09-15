@@ -307,3 +307,13 @@ const dan = {
   // dan.hasDriversLicense = false;
   console.log(dan.getSummary());
   */
+  
+  ////////////////////////////////////////
+  // Iteration: The for Loop
+  /*
+  // for loop keeps running until the condition is false
+  // the loop has 3 parts: set a variable with an initial value, a conditional, and the expression
+  for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+};
+*/
