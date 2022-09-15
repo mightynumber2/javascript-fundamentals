@@ -315,5 +315,56 @@ const dan = {
   // the loop has 3 parts: set a variable with an initial value, a conditional, and the expression
   for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+  };
+*/
+  
+////////////////////////////////////////
+// LOOPING ARRAYS, BREAKING AND CONTINUING
+/*
+const dan = [
+  "Dan",
+  "Volkswagon",
+  2022 - 1981,
+  "software engineer",
+  ["Matt", "Bone", "Sam"],
+  true
+];
+
+const types = [];
+
+for (let i = 0; i < dan.length; i++) {
+  // Reading from dan array
+  // console.log(dan[i], typeof dan[i]);
+  
+  // filling types array
+  // types[i] = typeof dan[i];
+  types.push(typeof dan[i]);
+};
+
+// console.log(types);
+
+// Calc birth years and store in an new array
+const years = [1981, 1984, 1958, 2006];
+
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2022 - years[i]);
+};
+// console.log(ages);
+
+// Continue and Break
+console.log("-----CONTINUE~----------")
+for (let i = 0; i < dan.length; i++) {
+  if (typeof dan[i] !== "string") continue; // skip
+
+  console.log(dan[i], typeof dan[i]);
+};
+
+console.log("-----BREAK!-------------")
+for (let i = 0; i < dan.length; i++) {
+  if (typeof dan[i] === "number") break; // exit
+
+  console.log(dan[i], typeof dan[i]);
 };
 */
