@@ -367,4 +367,29 @@ for (let i = 0; i < dan.length; i++) {
 
   console.log(dan[i], typeof dan[i]);
 };
+
+////////////////////////////////////////
+// LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+const dan = [
+  "Dan",
+  "Volkswagon",
+  2022 - 1981,
+  "software engineer",
+  ["Matt", "Bone", "Sam"],
+];
+const danOrder = [];
+
+for (let i = dan.length - 1; i >= 0; i--) {
+  console.log(i, dan[i]);
+};
+
+// for each exercise iteration, execute rep loop
+for ( let exercise = 1; exercise < 4; exercise++) {
+  console.log(`--------Starting Exercise ${exercise}`);
+  
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Lifting Weight ${rep} time!`);
+  }
+}
 */
