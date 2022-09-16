@@ -389,4 +389,25 @@ for (let i = 0; i < listOfNeighbors.length; i++) {
     console.log(listOfNeighbors[i][y]);
   }
 }
+
+////////////////////////////////////////////
+// LECTURE: The while Loop
+
+const populations = [332, 52, 1400, 10];
+const percentages2 = [];
+
+const percentageOfWorld1 = population => (population / 7900) * 100;
+
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+console.log(percentages2)
+
+const percentages3 = [];
+let i = 0;
+while (i < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[i]));
+  i++;
+}
+console.log(percentages3);
 */
