@@ -392,4 +392,27 @@ for ( let exercise = 1; exercise < 4; exercise++) {
     console.log(`Lifting Weight ${rep} time!`);
   }
 }
+
+////////////////////////////////////////
+// THE WHILE LOOP
+
+for (let rep = 1; rep <= 5; rep++) {
+  console.log(`Lifting weights rep ${rep}`);
+}
+// the while loop is more versatile
+let rep = 1;
+while (rep <= 5) {
+  console.log(`WHILE: Lifting weights rep ${rep}`);
+  rep++;
+}
+
+// keep throwing dice until you get a 6
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`You rolled a ${dice}!`);
+}
 */
