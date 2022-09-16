@@ -371,6 +371,22 @@ for (let i = 0; i < populations.length; i++) {
 }
 
 console.log(percentages2);
+
+////////////////////////////////////////////
+// LECTURE: Looping Backwards and Loops in Loops
+
+const listOfNeighbors = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"]
+];
+
+// for each array
+for (let i = 0; i < listOfNeighbors.length; i++) {
+  // console.log(listOfNeighbors[i]);
+  // execute nested loop
+  for (let y = 0; y < listOfNeighbors[i].length; y++) {
+    console.log(listOfNeighbors[i][y]);
+  }
+}
 */
-
-
