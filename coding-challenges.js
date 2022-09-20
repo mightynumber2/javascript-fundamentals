@@ -229,3 +229,35 @@ const calcAverage = function (arr) {
 }
 console.log(calcAverage(totals));
 */
+
+/////////////////////////////////////////
+// DEVELOPER SKILLS & EDITOR SETUP
+
+//Coding Challenge #1///////////////////
+/*
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+// my almost-made-it version
+function printForecast(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`... ${arr[i]}'C in ${i + 1} days ...`);
+  }
+}
+printForecast(data1);
+console.log('----------------------');
+printForecast(data2);
+
+function printForecast(arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    str += `... ${arr[i]}'C in ${i + 1} days `;
+  }
+  console.log(str + '...');
+}
+printForecast(data1);
+console.log('----------------------');
+printForecast(data2);
+*/
+
+
