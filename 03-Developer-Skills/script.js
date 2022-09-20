@@ -1,7 +1,9 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-// PROBLEM:
+///////////////////////////////////
+// PROBLEM SOLVING
+
 // We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
 
 // 1) Understanding the problem
@@ -52,5 +54,22 @@ const amplitude = function (arr1, arr2) {
 }
 
 console.log(amplitude(temps, temps2));
-*/
 
+///////////////////////////////////
+// DEBUGGING
+
+function measureKelvin() {
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+    
+    // fix bug
+    value: Number(prompt('Degrees celsius:'))
+  }
+  // find bug
+  console.table(measurement);
+  const kelvin = measurement.value + 273;
+  return kelvin;
+}
+console.log(measureKelvin());
+*/
