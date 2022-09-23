@@ -260,4 +260,7 @@ console.log('----------------------');
 printForecast(data2);
 */
 
+/////////////////////////////////////////
+// JavaScript in the Browser: DOM and Events
 
+//Re-do guess my number from scratch//
