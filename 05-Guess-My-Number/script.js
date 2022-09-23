@@ -8,16 +8,13 @@ document.querySelector('.score').textContent = 41;
 
 console.log(document.querySelector('.guess').value = 16); */
 
-// const secretNum = Math.ceil(Math.random() * 20 );
 let secretNum = Math.ceil(Math.random() * 20 );
 let score = 20;
-// let highScore = 0;
+let highScore = 0;
+// document.querySelector('.number').textContent = secretNum;
 
 document.querySelector('.check').addEventListener('click', function() {
   const guess = Number(document.querySelector('.guess').value);
-  // const winner = document.querySelector('.message').textContent = '🍕 CORRECT NUMBER!';
-  // const tooHigh = document.querySelector('.message').textContent = 'Too high...';
-  // const tooLow = document.querySelector('.message').textContent = 'Too low...';
 
   // When the input is not a number
   if (!guess) {
@@ -25,12 +22,14 @@ document.querySelector('.check').addEventListener('click', function() {
     // When the player wins
     } else if (guess === secretNum) {
       document.querySelector('.message').textContent = '🍕 CORRECT NUMBER!';
-      document.querySelector('.score').textContent = score;
-      
       document.querySelector('body').style.background = '#60b347';
       document.querySelector('.number').textContent = secretNum;
       document.querySelector('.number').style.width = '30rem'
-      return score++;
+        // When the player gets the highscore
+        if (score > highScore) {
+        highScore = score;
+        document.querySelector('.highscore').textContent = highScore 
+        };
 
     // When the guess is too high
     } else if (guess > secretNum && score > 1) {
