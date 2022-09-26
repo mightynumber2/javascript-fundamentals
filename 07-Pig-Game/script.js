@@ -10,66 +10,35 @@ const player1 = document.querySelector('.player--0');
 const player2 = document.querySelector('.player--1');
 const p1_CurrentScore = document.querySelector('#current--0');
 const p2_CurrentScore = document.querySelector('#current--1');
-const diceImg = document.querySelector('.dice');
+let diceImg = document.querySelector('.dice');
 
+diceImg.style.display = 'none';
 let currentScore = 0;
+
+function switchPlayer() {
+  
+}
 
 function rollDice() {
   const randRoll = Math.ceil(Math.random() * 6);
   const player1Active = player1.classList.contains('player--active')
+  diceImg.style.display = 'block';
+  diceImg.src = `dice-${randRoll}.png`;
   
-  if (randRoll === 1) {
+  if (randRoll !== 1) {
+    currentScore += randRoll;
+    if (player1Active) {
+    p1_CurrentScore.textContent = currentScore;
+    } else {
+    p2_CurrentScore.textContent = currentScore;
+    }
+  // Roll a 1
+  } else {
     currentScore = 0;
     p1_CurrentScore.textContent = currentScore;
     p2_CurrentScore.textContent = currentScore;
-    diceImg.src = 'dice-1.png';
     player1.classList.toggle('player--active');
     player2.classList.toggle('player--active');
-
-  } else if (randRoll === 2) {
-      currentScore += 2;
-      diceImg.src = 'dice-2.png';
-      if (player1Active) {
-        p1_CurrentScore.textContent = currentScore; 
-      } else {
-        p2_CurrentScore.textContent = currentScore;
-      }
-
-  } else if (randRoll === 3) {
-      currentScore += 3;
-      diceImg.src = 'dice-3.png';
-      if (player1Active) {
-        p1_CurrentScore.textContent = currentScore; 
-      } else {
-        p2_CurrentScore.textContent = currentScore;
-      }
-
-  } else if (randRoll === 4) {
-      currentScore += 4;
-      diceImg.src = 'dice-4.png';
-      if (player1Active) {
-        p1_CurrentScore.textContent = currentScore; 
-      } else {
-        p2_CurrentScore.textContent = currentScore;
-      }
-
-  } else if (randRoll === 5) {
-      currentScore += 5;
-      diceImg.src = 'dice-5.png';
-      if (player1Active) {
-        p1_CurrentScore.textContent = currentScore; 
-      } else {
-        p2_CurrentScore.textContent = currentScore;
-      }
-
-  } else if (randRoll === 6) {
-      currentScore += 6;
-      diceImg.src = 'dice-6.png';
-      if (player1Active) {
-        p1_CurrentScore.textContent = currentScore; 
-      } else {
-        p2_CurrentScore.textContent = currentScore;
-      }
   }
 };
 
@@ -94,7 +63,7 @@ function storeCurrentScore() {
     p1_Score.textContent = score;
     currentScore = 0;
     p1_CurrentScore.textContent = currentScore;
-    
+
   } else {
     score = Number(p2_Score.textContent) + currentScore;
     p2_Score.textContent = score;
@@ -108,7 +77,7 @@ function storeCurrentScore() {
     rollBtn.disabled = true;
     holdBtn.disabled = true;
     
-  } else if (p2_Score.textContent >= 10) {
+  } else {
     player2.classList.toggle('player--winner');
     p2_Name.textContent = "🎊 WINNER!"
     rollBtn.disabled = true;
@@ -128,6 +97,7 @@ function newGame() {
   p2_Score.textContent = 0;
   p1_CurrentScore.textContent = 0;
   p2_CurrentScore.textContent = 0;
+  diceImg.style.display = 'none';
   rollBtn.disabled = false;
   holdBtn.disabled = false;
 }
