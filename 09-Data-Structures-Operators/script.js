@@ -33,9 +33,48 @@ const restaurant = {
 
   orderDelivery: function({starterIndex = 3, mainIndex = 2, time = 1800, address}) {
     console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} at ${time} hours for ${address}`);
+  },
+
+  orderPasta: function(ing1, ing2, ing3) {
+    console.log(`Pasta coming up! using ${ing1}, ${ing2}, and ${ing3}!`)
   }
 };
 
+// The Spread Operator
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+// Spread the existing array into individal values
+const betterNewArr = [1, 2, ...arr];
+console.log(betterNewArr);
+console.log(...betterNewArr);
+//Add a new food item to mainMenu
+const newMainMenu = [...restaurant.mainMenu, 'Ravioli'];
+console.log(newMainMenu);
+console.log(...newMainMenu);
+//Copy arrays
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+// Join the 2 menu arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+// Iterables: arrays, strings, maps, and sets. Not objects.
+const str = 'Daniel';
+console.log(...str); // yes
+// console.log(`${...str} is a software engineer`); // no
+// Use spread operator to pass into function arguments
+// const ingredients = [prompt('Give me ingredient 1:'), prompt('Ingredient 2?'), prompt('Ingredient 3?')];
+// old way
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// new way
+// restaurant.orderPasta(...ingredients);
+// Spread ALLOWED in objects since ES2018
+const newRestaurant = {founder: 'Danny Boy',...restaurant, founded: 1981};
+console.log(newRestaurant);
+const restaurantCopy = {...restaurant};
+restaurantCopy.location = "1998 W Caballo Estates #35";
+console.log(restaurantCopy.location);
+console.log(restaurant.location);
 
 // Object destructuring
 
