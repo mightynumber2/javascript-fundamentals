@@ -37,10 +37,50 @@ const restaurant = {
 
   orderPasta: function(ing1, ing2, ing3) {
     console.log(`Pasta coming up! using ${ing1}, ${ing2}, and ${ing3}!`)
+  },
+
+  orderPizza: function(mainIng, ...otherIngs) {
+    mainIng = mainIng.charAt(0).toUpperCase() + mainIng.slice(1);
+    if (otherIngs == 0) {
+      console.log(`${mainIng} pizza ordered!`);
+    } else {
+      console.log(`${mainIng} pizza ordered with ${otherIngs}!`)
+    }
   }
 };
 
-// The Spread Operator
+restaurant.orderPizza('pepperoni', 'mushroom', 'olives', 'green peppers');
+// 1. Destructuring use of REST
+// REST does the opposite of spread
+// SPREAD is on the right of the assignment
+const arr = [1, 2, ...[3, 4]];
+// REST is on the left and must be used last, in order to collect the 'rest' of the elements
+const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, others);
+// REST and SPREAD used together: REST with variables and SPREAD with values
+// REST operator ignores skipped elements
+// unlike spread, REST can only be used once, at the end
+const [main1, , main2, ...restOfMenu] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(main1, main2, restOfMenu);
+// REST in objects
+const {thu, fri, ...weekend} = restaurant.openingHours;
+console.log(weekend);
+
+// 2. REST in Functions used as parameters
+const add = function(...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) 
+    sum += numbers[i];
+  console.log(sum);
+}
+
+add(1, 2, 2, 2, 2, 2);
+// Spread version
+const G = [7, 7, 7]
+add(G[0], G[1], G[2]);
+add(...G);
+
+/* // The Spread Operator
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -74,7 +114,7 @@ console.log(newRestaurant);
 const restaurantCopy = {...restaurant};
 restaurantCopy.location = "1998 W Caballo Estates #35";
 console.log(restaurantCopy.location);
-console.log(restaurant.location);
+console.log(restaurant.location); */
 
 // Object destructuring
 
