@@ -49,7 +49,18 @@ const restaurant = {
   }
 };
 
-// Short-circuiting with || can use and return ANY data type, and it returns the FIRST TRUTHY value or last falsy
+// NULLISH operator ?? only includes null/defined as falsy values, not 0 or ''
+restaurant.numGuests = 0; // truthy only with NULLISH
+
+const guestsOR = restaurant.numGuests || 10;
+console.log(guestsOR); // 10
+
+const guestsNULLISH = restaurant.numGuests ?? 10;
+console.log(guestsNULLISH); // 0
+
+// Short-circuit version
+
+/* // Short-circuiting with || can use and return ANY data type, and it returns the FIRST TRUTHY value or last falsy
 // useful for setting default values
 console.log('------OR------')
 console.log('' || 'Dan');
@@ -78,7 +89,7 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('pepperoni', 'mushrooms', 'pineapple');
 }
 // AND executes the last truthy operant
-restaurant.order(2, 1) && restaurant.orderPizza('anchovies', 'garlic', 'butter');
+restaurant.order(2, 1) && restaurant.orderPizza('anchovies', 'garlic', 'butter'); */
 /* restaurant.orderPizza('pepperoni', 'mushroom', 'olives', 'green peppers');
 // 1. Destructuring use of REST
 // REST does the opposite of spread
