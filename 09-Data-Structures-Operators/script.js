@@ -49,7 +49,37 @@ const restaurant = {
   }
 };
 
-restaurant.orderPizza('pepperoni', 'mushroom', 'olives', 'green peppers');
+// Short-circuiting with || can use and return ANY data type, and it returns the FIRST TRUTHY value or last falsy
+// useful for setting default values
+console.log('------OR------')
+console.log('' || 'Dan');
+console.log(3 || 'Viktor');
+console.log(false || true);
+// returns the last falsy in this case: null
+console.log(undefined || null);
+console.log('' || false || undefined || 'Dan' || true || 'dog');
+
+restaurant.numGuests = 30; // makes truthy unless = 0
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+// Short-circuit version
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// Short-circuiting with && returns the first falsy or the last truthy
+console.log('------AND------')
+console.log(null && 'Dan');
+console.log(3 && 'Viktor');
+console.log(false && true);
+console.log(undefined && null);
+console.log(3 && 'Dan' && true && 'dog');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('pepperoni', 'mushrooms', 'pineapple');
+}
+// AND executes the last truthy operant
+restaurant.order(2, 1) && restaurant.orderPizza('anchovies', 'garlic', 'butter');
+/* restaurant.orderPizza('pepperoni', 'mushroom', 'olives', 'green peppers');
 // 1. Destructuring use of REST
 // REST does the opposite of spread
 // SPREAD is on the right of the assignment
@@ -78,7 +108,7 @@ add(1, 2, 2, 2, 2, 2);
 // Spread version
 const G = [7, 7, 7]
 add(G[0], G[1], G[2]);
-add(...G);
+add(...G); */
 
 /* // The Spread Operator
 const arr = [7, 8, 9];
