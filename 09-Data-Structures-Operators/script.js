@@ -49,14 +49,45 @@ const restaurant = {
   }
 };
 
-// NULLISH operator ?? only includes null/defined as falsy values, not 0 or ''
+// OR assignment operator
+const restUno = {
+  name: 'China King',
+  numGuests: 0,
+};
+// API calls with unknown properties
+const restDos = {
+  name: 'Big Wa\'s',
+  owner: 'Big MacDonald',
+};
+// setting defaults with OR
+// restUno.numGuests = restUno.numGuests || 10;
+// restDos.numGuests = restDos.numGuests || 10;
+// Or assignment version
+/* restUno.numGuests ||= 10;
+restDos.numGuests ||= 10;
+console.log(restUno);
+console.log(restDos); */
+// Using Nullish (null/undefined = falsy) truthy = 0's or ''
+/* restUno.numGuests ??= 10;
+restDos.numGuests ??= 10;
+console.log(restUno);
+console.log(restDos); */
+// AND assignment operators to return first falsy or last truthy
+// restDos.owner = restDos.owner && '<ANONYMOUS>';
+// restUno.owner = restUno.owner && '<ANONYMOUS>';
+restDos.owner &&= '<ANONYMOUS>';
+restUno.owner &&= '<ANONYMOUS>';
+console.log(restDos);
+console.log(restUno);
+
+/* // NULLISH operator ?? only includes null/defined as falsy values, not 0 or ''
 restaurant.numGuests = 0; // truthy only with NULLISH
 
 const guestsOR = restaurant.numGuests || 10;
 console.log(guestsOR); // 10
 
 const guestsNULLISH = restaurant.numGuests ?? 10;
-console.log(guestsNULLISH); // 0
+console.log(guestsNULLISH); // 0 */
 
 // Short-circuit version
 
