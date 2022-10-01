@@ -49,7 +49,7 @@ const restaurant = {
   }
 };
 
-// OR assignment operator
+/* // OR assignment operator
 const restUno = {
   name: 'China King',
   numGuests: 0,
@@ -58,7 +58,7 @@ const restUno = {
 const restDos = {
   name: 'Big Wa\'s',
   owner: 'Big MacDonald',
-};
+}; */
 // setting defaults with OR
 // restUno.numGuests = restUno.numGuests || 10;
 // restDos.numGuests = restDos.numGuests || 10;
@@ -75,10 +75,10 @@ console.log(restDos); */
 // AND assignment operators to return first falsy or last truthy
 // restDos.owner = restDos.owner && '<ANONYMOUS>';
 // restUno.owner = restUno.owner && '<ANONYMOUS>';
-restDos.owner &&= '<ANONYMOUS>';
-restUno.owner &&= '<ANONYMOUS>';
-console.log(restDos);
-console.log(restUno);
+// restDos.owner &&= '<ANONYMOUS>';
+// restUno.owner &&= '<ANONYMOUS>';
+// console.log(restDos);
+// console.log(restUno);
 
 /* // NULLISH operator ?? only includes null/defined as falsy values, not 0 or ''
 restaurant.numGuests = 0; // truthy only with NULLISH
