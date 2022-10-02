@@ -30,15 +30,15 @@ const restaurant = {
   order: function(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
+  
   orderDelivery: function({starterIndex = 3, mainIndex = 2, time = 1800, address}) {
     console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} at ${time} hours for ${address}`);
   },
-
+  
   orderPasta: function(ing1, ing2, ing3) {
     console.log(`Pasta coming up! using ${ing1}, ${ing2}, and ${ing3}!`)
   },
-
+  
   orderPizza: function(mainIng, ...otherIngs) {
     mainIng = mainIng.charAt(0).toUpperCase() + mainIng.slice(1);
     if (otherIngs == 0) {
@@ -48,6 +48,22 @@ const restaurant = {
     }
   }
 };
+
+///////////////////////////////////////////////////// 
+// THE FOR-OF LOOP
+
+// Grab all menu items through destructuring using the spread operator
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+// Use for-of loop to log each item of the menu array
+for (const item of menu) console.log(item);
+// Get index and value for each element using the array's entries method--old way
+for (const item of menu.entries()) 
+console.log(`${item[0] + 1} ${item[1]}`);
+console.log([...menu.entries()]);
+// New way by destructuring item
+for (const [i, value] of menu.entries())
+console.log(`${i + 1}: ${value}`);
 
 /* // OR assignment operator
 const restUno = {

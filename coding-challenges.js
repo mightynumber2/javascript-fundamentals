@@ -271,7 +271,7 @@ printForecast(data2);
 
 //Coding Challenge #1///////////////////
 
-const game = {
+/* const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
   players: [
@@ -335,4 +335,4 @@ function printGoals(...players) {
 }
 printGoals(...game.scored);
 // 7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, without using an if/else statement or the ternary operator.
-team1 < team2 && console.log('Team 1 is more likely to win');
+team1 < team2 && console.log('Team 1 is more likely to win'); */
