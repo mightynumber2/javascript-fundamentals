@@ -3,7 +3,7 @@
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-  
+
 const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 const openingHours = {
@@ -16,7 +16,7 @@ const openingHours = {
       close: 23,
     },
     // ES6: property names can be computed
-    [weekend[5]]: {
+    [weekdays[5]]: {
       open: 0, // Open 24 hours
       close: 24,
     },
@@ -55,6 +55,26 @@ const restaurant = {
     }
   }
 };
+
+// Optional chaining ES2020
+console.log(restaurant.openingHours?.mon?.open);
+
+for (const days of weekdays) {
+const checkOpen = restaurant.openingHours[days]?.open ?? 'closed';
+console.log(`On ${days}, we open at ${checkOpen}.`);
+}
+// Methods
+console.log(restaurant.order?.(2, 2) ?? 'Method does not exist');
+console.log(restaurant.orderDominos?.('Pepperoni', 'Pineapples', 'Ham') ?? 'Method does not exist');
+
+// Arrays
+const users = [{name: 'Dan'}, {email: 'DanVickers@gmail.com'}];
+
+console.log(users[0]?.name ?? 'Array value does not exist');
+// is equivalent to:
+if (users[1]) 
+console.log(users[1].email); 
+else console.log('Array value does not exist');
 
 /* ///////////////////////////////////////////////////// 
 // THE FOR-OF LOOP
