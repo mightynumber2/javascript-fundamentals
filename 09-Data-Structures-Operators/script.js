@@ -55,8 +55,32 @@ const restaurant = {
     }
   }
 };
+///////////////////////////////////////////////////// 
+// LOOPING OBJECTS
 
-// Optional chaining ES2020
+// Object.keys for property names
+const properties = Object.keys(openingHours);
+
+let startStr = `We are open ${properties.length} of the week: `
+
+for (const days of properties)
+startStr += `${days}  `;
+console.log(startStr);
+
+// Object.values for property values
+const values = Object.values(openingHours);
+console.log(values);
+
+// Object.entries for entire keys + values
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+// Use all 3 methods together by destructuring the value object
+// [key, value]
+for (const [key, {open, close}] of entries) 
+console.log(`On ${key}, we open at ${open} and close at ${close}`);
+
+/* // Optional chaining ES2020
 console.log(restaurant.openingHours?.mon?.open);
 
 for (const days of weekdays) {
@@ -74,7 +98,7 @@ console.log(users[0]?.name ?? 'Array value does not exist');
 // is equivalent to:
 if (users[1]) 
 console.log(users[1].email); 
-else console.log('Array value does not exist');
+else console.log('Array value does not exist'); */
 
 /* ///////////////////////////////////////////////////// 
 // THE FOR-OF LOOP
