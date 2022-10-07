@@ -4,7 +4,94 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  // ES6: property names can be computed
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 ///////////////////////////////////////////////////// 
+// MAP: ITERATION
+
+// Create a map from an array
+const question = new Map([
+['question', 'What is the best programming language in the  world?'],
+[1, 'C'],
+[2, 'Java'],
+[3, 'JavaScript'],
+['correct', 3],
+[true, 'Correct 🥂'],
+[false, 'Incorrect!']
+])
+// Convert an object to a map
+console.log(Object.entries(openingHours))
+const hoursMap = new Map(Object.entries(openingHours))
+console.log(hoursMap)
+// Iterate over our question map
+console.log(question.get('question'))
+for (const [key, value] of question) {
+  if (typeof key === 'number')
+  console.log(`Answer: ${key}. ${value}?`)
+}
+// Get answer to quiz
+const answer = Number(prompt('Your answer:'))
+console.log(answer)
+console.log(question.get(answer === question.get('correct')))
+// Convert map to an array
+console.log(question)
+console.log([...question])
+console.log(question.keys())
+console.log([...question.keys()])
+console.log(question.values())
+console.log([...question.values()])
+
+///////////////////////////////////////////////////// 
+// ES6: MAP
+
+// Maps are like objects but you can use any key-type
+/* const pizzaShop = new Map();
+pizzaShop.set('name', 'Dominos');
+pizzaShop.set(7, 'Pepperoni Pizza');
+console.log(pizzaShop.set(2, 'The Number Dos'));
+
+pizzaShop
+  .set('categories', ['Pizza', 'Breadsticks', 'Canoli', 'Beefaroni'])
+  .set('open', 11)
+  .set('close', 21)
+  .set(true, 'We are open!')
+  .set(false, 'We be closed');
+  console.log(pizzaShop);
+
+console.log(pizzaShop.get('name'));
+console.log(pizzaShop.get(7));
+console.log(pizzaShop.get(false));
+
+let time = 12;
+console.log(pizzaShop.get(time >= pizzaShop.get('open') && time <= pizzaShop.get('close')));
+
+console.log(pizzaShop.has('categories'));
+console.log(pizzaShop.has('7'));
+pizzaShop.delete(2);
+console.log(pizzaShop.size);
+// pizzaShop.clear();
+const arrKey = [1, 2];
+pizzaShop.set(arrKey, 'This is an array');
+
+console.log(pizzaShop.get(arrKey)); */
+
+/* ///////////////////////////////////////////////////// 
 // ES6: SETS
 
 // Sets return an unordered list of UNIQUE elements
@@ -39,7 +126,7 @@ staffSet = [...new Set(staff)];
 console.log(staffSet);
 
 console.log(new Set(['Waiter', 'Waiter', 'Chef', 'Cook', 'Chef', 'Cook']).size);
-console.log(new Set('Danubis').size);
+console.log(new Set('Danubis').size); */
 
 
 
