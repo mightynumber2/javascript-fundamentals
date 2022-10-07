@@ -425,7 +425,7 @@ console.log(scorers);
 
 //Coding Challenge #3///////////////////
 
-const gameEvents = new Map([
+/* const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '� Substitution'],
   [47, '⚽ GOAL'],
@@ -456,4 +456,4 @@ console.log(`An event happened, on average, every ${Math.round(totalTime / gameE
 for (const [time, event] of gameEvents) {
   const half = time <= 45 ? 'FIRST' : 'SECOND'  
   console.log(`[${half} HALF] ${time}: ${event}`)
-}
+} */
