@@ -26,7 +26,7 @@ const openingHours = {
 // MAP: ITERATION
 
 // Create a map from an array
-const question = new Map([
+/* const question = new Map([
 ['question', 'What is the best programming language in the  world?'],
 [1, 'C'],
 [2, 'Java'],
@@ -55,7 +55,7 @@ console.log([...question])
 console.log(question.keys())
 console.log([...question.keys()])
 console.log(question.values())
-console.log([...question.values()])
+console.log([...question.values()]) */
 
 ///////////////////////////////////////////////////// 
 // ES6: MAP
