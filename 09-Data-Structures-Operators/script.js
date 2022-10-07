@@ -4,7 +4,46 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+///////////////////////////////////////////////////// 
+// ES6: SETS
+
+// Sets return an unordered list of UNIQUE elements
+const ordersSet = new Set([
+  'Pizza',
+  'Pasta',
+  'Pizza',
+  'Rigatoni',
+  'Pasta',
+]);
+console.log(ordersSet);
+console.log(ordersSet.size);
+ordersSet.add('Breadsticks');
+ordersSet.delete('Pasta');
+console.log(ordersSet);
+console.log(ordersSet.has('Pasta'));
+console.log(ordersSet.has('Breadsticks'));
+// ordersSet.clear();
+// console.log(ordersSet);
+
+console.log(new Set('Danubist'));
+console.log(new Set('Danubist').size);
+
+for (const order of ordersSet) console.log(order);
+
+const staff = ['Chef', 'Manager', 'Chef', 'Waitress', 'Waitress'];
+console.log(staff);
+
+let staffSet = new Set(staff);
+console.log(staffSet);
+staffSet = [...new Set(staff)];
+console.log(staffSet);
+
+console.log(new Set(['Waiter', 'Waiter', 'Chef', 'Cook', 'Chef', 'Cook']).size);
+console.log(new Set('Danubis').size);
+
+
+
+/* const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 const openingHours = {
     [weekdays[3]]: {
@@ -54,7 +93,7 @@ const restaurant = {
       console.log(`${mainIng} pizza ordered with ${otherIngs}!`)
     }
   }
-};
+}; */
 /* ///////////////////////////////////////////////////// 
 // LOOPING OBJECTS
 
