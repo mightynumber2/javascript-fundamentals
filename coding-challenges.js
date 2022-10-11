@@ -457,3 +457,28 @@ for (const [time, event] of gameEvents) {
   const half = time <= 45 ? 'FIRST' : 'SECOND'  
   console.log(`[${half} HALF] ${time}: ${event}`)
 } */
+
+//Coding Challenge #4///////////////////
+
+/* underscore_case
+first_name
+Some_Variable
+ calculate_AGE
+delayed_departure */
+
+/* document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').onclick = toCamelCase;
+
+function toCamelCase() {
+  let input = document.querySelector('textarea');
+  const rows = input.value.split('\n');
+  
+  for (const [i, word] of rows.entries()) {
+    const[first, second] = word.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+    const fullOutput = (`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+    console.log(fullOutput);
+  }
+}; */
