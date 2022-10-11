@@ -4,7 +4,29 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+///////////////////////////////////////////////////// 
+// STRING METHODS
+
+/* const capitalizeNames = str => {
+  const strSplit = str.split(' ');
+  const strUpper = [];
+  
+  for (const word of strSplit) {
+    // strUpper.push(word[0].toUpperCase() + word.slice(1))
+    strUpper.push(word.replace(word[0], word[0].toUpperCase()))
+  }
+  console.log(strUpper.join(' '));
+}
+capitalizeNames('david lee roth the dragon');
+capitalizeNames('dan the man lee volkswagon') */
+
+/* const passenger = 'DaNbAs';
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); */
+
+/* const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
 const openingHours = {
   [weekdays[3]]: {
@@ -20,7 +42,7 @@ const openingHours = {
     open: 0, // Open 24 hours
     close: 24,
   },
-};
+}; */
 
 ///////////////////////////////////////////////////// 
 // MAP: ITERATION
