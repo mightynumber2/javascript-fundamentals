@@ -4,6 +4,25 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+function formatFlights(str) {
+  // let strSplit = str.split('+');
+  const strSplit = str.replaceAll('_', ' ').replaceAll(':', 'h').replaceAll('fao93766109', 'FAO').replaceAll('txl2133758440', 'TXL').replaceAll('bru0943384722', 'BRU').replaceAll('hel7439299980', 'HEL').replaceAll('lis2323639855', 'LIS').split('+');
+  
+  for (const [i, row] of strSplit.entries()) {
+    let rowReplace = row.replace(';', ' from ').replace(';', ' to ').replace(';', ' (') + ')';
+
+    if (rowReplace[3] == 'l') 
+      rowReplace = ' '.repeat(i) + '🔴' + rowReplace;
+    else if (rowReplace[3] == 'r') 
+      rowReplace = ' '.repeat(12) + rowReplace;
+    else 
+      rowReplace = ' '.repeat(10) + rowReplace;
+      
+    console.log(rowReplace);
+  }
+}
+
+formatFlights(flights);
 ///////////////////////////////////////////////////// 
 // STRING METHODS
 
@@ -149,8 +168,6 @@ console.log(staffSet);
 
 console.log(new Set(['Waiter', 'Waiter', 'Chef', 'Cook', 'Chef', 'Cook']).size);
 console.log(new Set('Danubis').size); */
-
-
 
 /* const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
