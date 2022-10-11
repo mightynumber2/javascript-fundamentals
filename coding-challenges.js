@@ -482,3 +482,26 @@ function toCamelCase() {
     console.log(fullOutput);
   }
 }; */
+
+// Second attempt
+/* underscore_case
+first_name
+Some_Variable
+ calculate_AGE
+delayed_departure */
+
+/* document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').onclick = camelCaseIt;
+
+function camelCaseIt() {
+  const input = document.querySelector('textarea');
+  const inputRows = input.value.split('\n');
+  
+  for (let [i, row] of inputRows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first.toLowerCase()}${second.replace(second[0], second[0].toUpperCase())}`;
+    console.log(output.padEnd(20) + '✅'.repeat(i + 1));
+  }
+} */
