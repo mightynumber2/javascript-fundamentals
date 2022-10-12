@@ -4,8 +4,26 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-function formatFlights(str) {
-  // let strSplit = str.split('+');
+///////////////////////////////////////////////////// 
+// STRING METHODS PRACTICE
+
+const shorten = str => str.toUpperCase().slice(0, 3);
+
+
+const formatFlights = str => {
+  for (const row of str.split('+')) {
+    const [status, from, to, time] = row.split(';');
+
+    const output = `${status.startsWith('_Delayed') ? '🔴' : ''}${status.replaceAll('_', ' ')} from ${shorten(from)} to ${shorten(to)} (${time.replace(':', 'h')})`.padStart(45);
+
+    console.log(output);
+  }
+}
+
+formatFlights(flights);
+
+// My baddie version
+/* function formatFlights(str) {
   const strSplit = str.replaceAll('_', ' ').replaceAll(':', 'h').replaceAll('fao93766109', 'FAO').replaceAll('txl2133758440', 'TXL').replaceAll('bru0943384722', 'BRU').replaceAll('hel7439299980', 'HEL').replaceAll('lis2323639855', 'LIS').split('+');
   
   for (const [i, row] of strSplit.entries()) {
@@ -21,8 +39,8 @@ function formatFlights(str) {
     console.log(rowReplace);
   }
 }
+formatFlights(flights); */
 
-formatFlights(flights);
 ///////////////////////////////////////////////////// 
 // STRING METHODS
 
