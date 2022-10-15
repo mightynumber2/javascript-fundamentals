@@ -61,7 +61,7 @@ greet('Hello')('Dan'); */
 ///////////////////////////////////////////
 // THE CALL AND APPLY METHODS
 
-const phoenixAirlines = {
+/* const phoenixAirlines = {
   airline: 'Phoenix Airlines',
   iataCode: 'PH',
   bookings: [],
@@ -96,6 +96,44 @@ console.log(louisianaAir.bookings);
 const passenger53 = [215, 'Tay Walker'];
 book.apply(louisianaAir, passenger53);
 console.log(louisianaAir.bookings);
+
+// The bind method binds 'this' to a new keyword and returns a new function that will always use this new keyword
+const bookLA = book.bind(louisianaAir);
+const bookPH = book.bind(phoenixAirlines);
+bookLA(444, 'Jeff Young');
+bookPH(315, 'Quigey Bear');
+// Bind() can bind multiple function arguments
+// known as partial application when setting parts of the arguments beforehand
+const bookLA_313 = book.bind(louisianaAir, 313);
+bookLA_313('Natalie Portman'); 
+bookLA_313('Jose Canseco'); 
+console.log(louisianaAir.bookings);
+// with Event Listeners
+louisianaAir.planes = 150;
+louisianaAir.buyPlanes = function() {
+  this.planes++;
+  console.log(this.planes);
+};
+console.log(louisianaAir);
+// we use bind instead of call, because bind creates a copy of the buyPlanes function with a preset value, while the call method invokes the function immediately
+document.querySelector('.buy').addEventListener('click', louisianaAir.buyPlanes.bind(louisianaAir));
+// Partial Application (presetting) using bind
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(.15, 100));
+// use null if 'this' or an argument is not applicable
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+
+// Practice: add VAT using a function to return a function
+// const addTaxRate = rate => {
+//   return function(value) {
+//     return value + value * rate;
+//   };
+// };
+const addTaxRate = rate => value => value + value * rate;
+const addVAT2 = addTaxRate(0.23);
+// console.log(addTaxRate(0.23)(100));
+console.log(addVAT2(100)); */
 
 // Constructor conversion
 /* function MakeAirline(airline, iataCode,) {
