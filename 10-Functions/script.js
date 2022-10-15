@@ -47,13 +47,69 @@ const high5 = function() {
   console.log('✋');
 };
 
-///////////////////////////////////////////
-// FUNCTIONS RETURNING FUNCTIONS
-
 document.body.addEventListener('click', high5);
 ['Dan', 'Jonas', 'Leon', 'Colt'].forEach(high5); */
 
-const greet = greeting => name =>
+///////////////////////////////////////////
+// FUNCTIONS RETURNING FUNCTIONS
+
+/* const greet = greeting => name =>
   console.log(`${greeting} ${name}`);
 
-greet('Hello')('Dan');
+greet('Hello')('Dan'); */
+
+///////////////////////////////////////////
+// THE CALL AND APPLY METHODS
+
+const phoenixAirlines = {
+  airline: 'Phoenix Airlines',
+  iataCode: 'PH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(`Booked ${name} for ${this.airline} flight: ${this.iataCode + flightNum}`);
+
+    this.bookings.push( {flight: this.iataCode + flightNum, name});
+  }
+};
+phoenixAirlines.book(316, 'Dan Volks');
+phoenixAirlines.book(316, 'Teggy Bear');
+console.log(phoenixAirlines.bookings);
+
+// Use the function's call method to reassign 'this'
+const louisianaAir = {
+  airline: 'Louisiana Air',
+  iataCode: 'LA',
+  bookings: []
+};
+
+const book = phoenixAirlines.book;
+book.call(louisianaAir, 237, 'Kerry Brown');
+console.log(louisianaAir.bookings);
+book.call(phoenixAirlines, 477, 'Bebop Rhee');
+console.log(phoenixAirlines.bookings);
+// from an array
+const passenger52 = [215, 'Mary Walker'];
+book.call(louisianaAir, ...passenger52);
+console.log(louisianaAir.bookings);
+
+// Apply method; apply takes an array 'as is'
+const passenger53 = [215, 'Tay Walker'];
+book.apply(louisianaAir, passenger53);
+console.log(louisianaAir.bookings);
+
+// Constructor conversion
+/* function MakeAirline(airline, iataCode,) {
+  this.airline = airline,
+  this.iataCode = iataCode,
+  this.bookings = [],
+  this.book = function(flightNum, name) {
+    console.log(`Booked ${name} for ${this.airline} flight: ${this.iataCode + flightNum}`);
+
+    this.bookings.push( {flight: this.iataCode + flightNum, name});
+  }
+};
+
+const newOrleansAir = new MakeAirline('New Orleans Air', 'NO');
+console.log(newOrleansAir);
+newOrleansAir.book(322, 'John Mclane');
+console.log(newOrleansAir.bookings); */
