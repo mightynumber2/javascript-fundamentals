@@ -151,3 +151,20 @@ const newOrleansAir = new MakeAirline('New Orleans Air', 'NO');
 console.log(newOrleansAir);
 newOrleansAir.book(322, 'John Mclane');
 console.log(newOrleansAir.bookings); */
+
+///////////////////////////////////////////
+// MORE CLOSURE EXAMPLES
+
+const boardPassengers = function(n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function() {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups of ${perGroup} passengers`)
+  }, wait * 1000);
+
+  console.log(`Will be boarding in ${wait} seconds!`);
+}
+// Closures have priority over global scope
+const perGroup = 500;
+boardPassengers(150, 15);
