@@ -155,7 +155,7 @@ console.log(newOrleansAir.bookings); */
 ///////////////////////////////////////////
 // MORE CLOSURE EXAMPLES
 
-const boardPassengers = function(n, wait) {
+/* const boardPassengers = function(n, wait) {
   const perGroup = n / 3;
 
   setTimeout(function() {
@@ -167,4 +167,4 @@ const boardPassengers = function(n, wait) {
 }
 // Closures have priority over global scope
 const perGroup = 500;
-boardPassengers(150, 15);
+boardPassengers(150, 15); */
