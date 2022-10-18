@@ -74,3 +74,6 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+// ForEach()
+movements.forEach((amt, i, arr) => amt > 0 ? console.log(`Transaction ${i  + 1}: You deposited ${amt} dollars.`) : console.log(`Transaction ${i + 1}: You withdrew ${Math.abs(amt)} dollars`));
