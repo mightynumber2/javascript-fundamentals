@@ -593,6 +593,7 @@ poll.displayResults.call({answers: [5, 2, 3]}, 'string');
 // WORKING WITH ARRAYS
 
 //Coding Challenge #1///////////////////
+
 /* const checkDogs = function(dogsJulia, dogsKate) {
   const dogsMinusCatsCombined = dogsJulia.slice(1, -2).concat(dogsKate);
 
@@ -603,3 +604,20 @@ poll.displayResults.call({answers: [5, 2, 3]}, 'string');
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]); */
+
+//Coding Challenge #2///////////////////
+
+/* const calcAverageHumanAge = function(ages) {
+  const mapHumanAges = ages
+  .map(age => age <= 2 ? 2 * age : 16 + age * 4);
+  console.log(mapHumanAges);
+  const filterAges = mapHumanAges
+  .filter(age => age >= 18);
+  console.log(filterAges);
+  const reduceAges = filterAges
+  .reduce((acc, cur) => acc + cur) / filterAges.length;
+  console.log(reduceAges);
+}
+
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]); */
