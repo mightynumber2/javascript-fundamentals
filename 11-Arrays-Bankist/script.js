@@ -105,6 +105,8 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
+// These modern loops are beneficial because of chaining
+
 // ForEach()
 /* movements.forEach((amt, i, arr) => amt > 0 ? console.log(`Transaction ${i + 1}: You deposited ${amt} dollars.`) : console.log(`Transaction ${i + 1}: You withdrew ${Math.abs(amt)} dollars`)); */
 
@@ -119,3 +121,21 @@ console.log(movementsToUSD);
 const movementsDescription = movements.map((amt, i) => `Transaction ${i + 1}: You ${amt > 0 ? 'deposited' : 'withdrew'} ${Math.abs(amt)} dollars` );
 
 console.log(movementsDescription); */
+
+// Filter()
+/* console.log(movements);
+
+const deposits = movements.filter(amt => amt > 0);
+console.log(deposits);
+
+const withdrawals = movements.filter(amt => amt < 0);
+console.log(withdrawals);
+
+// Old for-of method
+const depositsForOf = [];
+for (const amt of movements) amt > 0 && depositsForOf.push(amt);
+console.log(depositsForOf)
+
+const withdrawalsForOf = [];
+for (const amt of movements) amt < 0 && withdrawalsForOf.push(amt);
+console.log(withdrawalsForOf); */
