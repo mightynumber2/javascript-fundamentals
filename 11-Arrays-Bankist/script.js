@@ -75,8 +75,14 @@ const displayMovements = movements => {
 containerMovements.insertAdjacentHTML('afterbegin', html);
 });
 }
-
 displayMovements(account1.movements);
+
+// Calculate current balance
+const calcDisplayBalance = function(movements) {
+  const balance = movements.reduce((acc, cur) => acc + cur);
+  labelBalance.textContent = `${balance} EUR`;
+}
+calcDisplayBalance(account1.movements);
 
 // Assign a short-hand username for each account
 const createUserNames = function(accs) {
@@ -88,8 +94,8 @@ const createUserNames = function(accs) {
     .join('');
   });
 } 
-
 createUserNames(accounts);
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -139,3 +145,7 @@ console.log(depositsForOf)
 const withdrawalsForOf = [];
 for (const amt of movements) amt < 0 && withdrawalsForOf.push(amt);
 console.log(withdrawalsForOf); */
+
+// Reduce()
+/* const max = movements.reduce((acc, cur) => acc > cur ? acc : cur)
+console.log(max); */
