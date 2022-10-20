@@ -78,6 +78,19 @@ containerMovements.insertAdjacentHTML('afterbegin', html);
 
 displayMovements(account1.movements);
 
+// Assign a short-hand username for each account
+const createUserNames = function(accs) {
+  accs.forEach(acc => {
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  });
+} 
+
+createUserNames(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
