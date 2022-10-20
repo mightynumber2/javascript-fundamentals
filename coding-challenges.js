@@ -588,3 +588,18 @@ poll.displayResults.call({answers: [5, 2, 3]}, 'string');
   header.style.color = 'blue';
  }; 
  })(); */
+
+ /////////////////////////////////////////
+// WORKING WITH ARRAYS
+
+//Coding Challenge #1///////////////////
+/* const checkDogs = function(dogsJulia, dogsKate) {
+  const dogsMinusCatsCombined = dogsJulia.slice(1, -2).concat(dogsKate);
+
+  console.log(dogsMinusCatsCombined);
+
+  dogsMinusCatsCombined.forEach((dog, i) => console.log(`Dog number ${i + 1} is ${dog < 3 ? 'still a puppy 🐶' : 'an adult 🐕‍🦺'}`));
+};
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]); */
