@@ -6,7 +6,7 @@
 
 // Data
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'Dan Volkswagon',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -61,6 +61,22 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// Display the account movements in movements container 
+const displayMovements = movements => {
+  containerMovements.innerHTML = '';
+
+  movements.forEach((amt, i) => {
+    const type = amt > 0 ? 'deposit' : 'withdrawal';
+    const html = `<div class="movements__row">
+  <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+  <div class="movements__value">${amt}</div>
+</div>`;
+containerMovements.insertAdjacentHTML('afterbegin', html);
+});
+}
+
+displayMovements(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -76,4 +92,4 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 
 // ForEach()
-movements.forEach((amt, i, arr) => amt > 0 ? console.log(`Transaction ${i  + 1}: You deposited ${amt} dollars.`) : console.log(`Transaction ${i + 1}: You withdrew ${Math.abs(amt)} dollars`));
+/* movements.forEach((amt, i, arr) => amt > 0 ? console.log(`Transaction ${i  + 1}: You deposited ${amt} dollars.`) : console.log(`Transaction ${i + 1}: You withdrew ${Math.abs(amt)} dollars`)); */
