@@ -80,9 +80,34 @@ displayMovements(account1.movements);
 // Calculate current balance
 const calcDisplayBalance = function(movements) {
   const balance = movements.reduce((acc, cur) => acc + cur);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance} €`;
 }
 calcDisplayBalance(account1.movements);
+
+// Display summary: in, out, interest
+const calcDisplaySummary = function(movements) {
+  const inTotal = movements
+  .filter(amt => amt > 0)
+  .reduce((acc, cur) => acc + cur);
+  labelSumIn.textContent = `${inTotal} €`;
+
+  const outTotal = movements
+  .filter(amt => amt < 0)
+  .reduce((acc, cur) => acc + Math.abs(cur), 0);
+  labelSumOut.textContent = `${outTotal} €`;
+
+  const interest = movements
+  .filter(amt => amt > 0)
+  .map(amt => amt * (1.2 / 100))
+  .filter((int, i, arr) => {
+    console.log(arr);
+    return int >= 1;
+  })
+  .reduce((acc, cur) => acc + cur, 0);
+  labelSumInterest.textContent = `${interest} €`;
+
+};
+calcDisplaySummary(account1.movements);
 
 // Assign a short-hand username for each account
 const createUserNames = function(accs) {
