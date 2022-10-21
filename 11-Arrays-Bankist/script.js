@@ -133,7 +133,7 @@ btnLogin.addEventListener('click', function(e) {
   if (currentAccount?.pin === +inputLoginPin.value) { 
   // display UI and message
   labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`
-  containerApp.style.opacity = '100';
+  containerApp.style.opacity = '1';
   // clear input fields, remove focus
   inputLoginUsername.value = inputLoginPin.value = '';
   inputLoginPin.blur();
