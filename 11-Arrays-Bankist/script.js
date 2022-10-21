@@ -75,39 +75,32 @@ const displayMovements = movements => {
 containerMovements.insertAdjacentHTML('afterbegin', html);
 });
 }
-displayMovements(account1.movements);
 
 // Calculate current balance
 const calcDisplayBalance = function(movements) {
   const balance = movements.reduce((acc, cur) => acc + cur);
   labelBalance.textContent = `${balance} €`;
 }
-calcDisplayBalance(account1.movements);
 
 // Display summary: in, out, interest
-const calcDisplaySummary = function(movements) {
-  const inTotal = movements
+const calcDisplaySummary = function(acc) {
+  const inTotal = acc.movements
   .filter(amt => amt > 0)
   .reduce((acc, cur) => acc + cur);
   labelSumIn.textContent = `${inTotal} €`;
 
-  const outTotal = movements
+  const outTotal = acc.movements
   .filter(amt => amt < 0)
-  .reduce((acc, cur) => acc + Math.abs(cur), 0);
-  labelSumOut.textContent = `${outTotal} €`;
+  .reduce((acc, cur) => acc + cur, 0);
+  labelSumOut.textContent = `${Math.abs(outTotal)} €`;
 
-  const interest = movements
+  const interest = acc.movements
   .filter(amt => amt > 0)
-  .map(amt => amt * (1.2 / 100))
-  .filter((int, i, arr) => {
-    console.log(arr);
-    return int >= 1;
-  })
+  .map(amt => amt * (acc.interestRate / 100))
+  .filter(int => int >= 1)
   .reduce((acc, cur) => acc + cur, 0);
   labelSumInterest.textContent = `${interest} €`;
-
 };
-calcDisplaySummary(account1.movements);
 
 // Assign a short-hand username for each account
 const createUserNames = function(accs) {
@@ -121,6 +114,30 @@ const createUserNames = function(accs) {
 } 
 createUserNames(accounts);
 
+// Login with credentials
+// Event handler function
+let currentAccount;
+btnLogin.addEventListener('click', function(e) {
+  // prevent html form from submitting
+  e.preventDefault();
+  // get current account username and pin
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  if (currentAccount?.pin === +inputLoginPin.value) { 
+  // display UI and message
+  labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`
+  containerApp.style.opacity = '100';
+  // clear input fields, remove focus
+  inputLoginUsername.value = inputLoginPin.value = '';
+  inputLoginPin.blur();
+  // display balance
+  calcDisplayBalance(currentAccount.movements);
+  // display movements
+  displayMovements(currentAccount.movements);
+  // display summary
+  calcDisplaySummary(currentAccount);
+  };
+  // Event handler function
+})
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
