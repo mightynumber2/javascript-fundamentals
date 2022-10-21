@@ -121,7 +121,7 @@ const displayCurrency = function() {
   calcDisplaySummary(currentAccount);
 };
 
-// Event Handlers
+// EVENT HANDLERS ///////////////////
 
 // Login with credentials
 let currentAccount;
