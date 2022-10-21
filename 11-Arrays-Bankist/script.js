@@ -77,9 +77,9 @@ containerMovements.insertAdjacentHTML('afterbegin', html);
 }
 
 // Calculate current balance
-const calcDisplayBalance = function(movements) {
-  const balance = movements.reduce((acc, cur) => acc + cur);
-  labelBalance.textContent = `${balance} €`;
+const calcDisplayBalance = function(acc) {
+  acc.balance = acc.movements.reduce((acc, cur) => acc + cur);
+  labelBalance.textContent = `${acc.balance} €`;
 }
 
 // Display summary: in, out, interest
@@ -114,14 +114,22 @@ const createUserNames = function(accs) {
 } 
 createUserNames(accounts);
 
+// Display currency function
+const displayCurrency = function() {
+  calcDisplayBalance(currentAccount);
+  displayMovements(currentAccount.movements);
+  calcDisplaySummary(currentAccount);
+};
+
+// Event Handlers
+
 // Login with credentials
-// Event handler function
 let currentAccount;
 btnLogin.addEventListener('click', function(e) {
   // prevent html form from submitting
   e.preventDefault();
   // get current account username and pin
-  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value.toLowerCase());
   if (currentAccount?.pin === +inputLoginPin.value) { 
   // display UI and message
   labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`
@@ -129,15 +137,27 @@ btnLogin.addEventListener('click', function(e) {
   // clear input fields, remove focus
   inputLoginUsername.value = inputLoginPin.value = '';
   inputLoginPin.blur();
-  // display balance
-  calcDisplayBalance(currentAccount.movements);
-  // display movements
-  displayMovements(currentAccount.movements);
-  // display summary
-  calcDisplaySummary(currentAccount);
-  };
-  // Event handler function
-})
+
+  displayCurrency();
+  }
+});
+
+// Transfer money
+btnTransfer.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const transferToAccount = accounts.find(acc => acc.username === inputTransferTo.value); 
+  const amount = +inputTransferAmount.value;
+
+  inputTransferTo.value = inputTransferAmount.value = '';
+
+  if (transferToAccount && transferToAccount !== currentAccount && amount > 0 && amount <= currentAccount.balance) {
+    console.log('Transfer Valid');
+    currentAccount.movements.push(-amount);
+    transferToAccount.movements.push(amount);
+    displayCurrency();
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
