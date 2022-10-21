@@ -174,3 +174,9 @@ console.log(withdrawalsForOf); */
 // Reduce()
 /* const max = movements.reduce((acc, cur) => acc > cur ? acc : cur)
 console.log(max); */
+
+// Find()
+/* const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+// for-of version
+for (const acc of accounts) acc.owner === 'Jessica Davis' && console.log(acc); */
