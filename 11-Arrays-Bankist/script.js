@@ -159,6 +159,23 @@ btnTransfer.addEventListener('click', function(e) {
   }
 });
 
+// Close account
+btnClose.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const index = accounts.findIndex(acc => acc === currentAccount);
+  // const index = accounts.indexOf(currentAccount);
+  
+  if (inputCloseUsername.value === currentAccount.username && +inputClosePin.value === currentAccount.pin) {
+    accounts.splice(index, 1);
+    containerApp.style.opacity = '0';
+    window.scrollTo(0, 0);
+  };
+
+  inputCloseUsername.value = inputClosePin.value = '';
+  labelWelcome.textContent = 'Log in to get started';
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
