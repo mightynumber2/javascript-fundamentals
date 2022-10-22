@@ -240,12 +240,25 @@ const withdrawalsForOf = [];
 for (const amt of movements) amt < 0 && withdrawalsForOf.push(amt);
 console.log(withdrawalsForOf); */
 
-// Reduce()
+// reduce()
 /* const max = movements.reduce((acc, cur) => acc > cur ? acc : cur)
 console.log(max); */
 
-// Find()
+// find()
 /* const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 // for-of version
 for (const acc of accounts) acc.owner === 'Jessica Davis' && console.log(acc); */
+
+// flat()
+const overallBalance = accounts
+.map(acc => acc.movements)
+.flat()
+.reduce((acc, cur) => acc + cur);
+console.log(overallBalance);
+
+// flatMap() version; can only go 1 level deep
+const totalBalance = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, cur) => acc + cur);
+  console.log(totalBalance);
