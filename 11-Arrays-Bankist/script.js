@@ -99,7 +99,7 @@ const calcDisplaySummary = function(acc) {
   .map(amt => amt * (acc.interestRate / 100))
   .filter(int => int >= 1)
   .reduce((acc, cur) => acc + cur, 0);
-  labelSumInterest.textContent = `${interest} €`;
+  labelSumInterest.textContent = `${Math.round(interest)} €`;
 };
 
 // Assign a short-hand username for each account
@@ -115,7 +115,7 @@ const createUserNames = function(accs) {
 createUserNames(accounts);
 
 // Display currency function
-const displayCurrency = function() {
+const updateCurrency = function() {
   calcDisplayBalance(currentAccount);
   displayMovements(currentAccount.movements);
   calcDisplaySummary(currentAccount);
@@ -138,7 +138,7 @@ btnLogin.addEventListener('click', function(e) {
   inputLoginUsername.value = inputLoginPin.value = '';
   inputLoginPin.blur();
 
-  displayCurrency();
+  updateCurrency();
   }
 });
 
@@ -155,7 +155,21 @@ btnTransfer.addEventListener('click', function(e) {
     console.log('Transfer Valid');
     currentAccount.movements.push(-amount);
     transferToAccount.movements.push(amount);
-    displayCurrency();
+    updateCurrency();
+  }
+});
+
+// Request loan
+btnLoan.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const amount = +inputLoanAmount.value;
+
+  inputLoanAmount.value = '';
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.10)) {
+    currentAccount.movements.push(amount);
+    updateCurrency();
   }
 });
 

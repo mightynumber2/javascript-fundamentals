@@ -243,6 +243,7 @@ h2 {
 /* Exceptions for interst */
 .form.form--loan {
   grid-template-columns: 2.5fr 1fr 2.5fr;
+  width: 150%
 }
 .form__label--loan {
   grid-row: 2;
