@@ -62,10 +62,12 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 // Display the account movements in movements container 
-const displayMovements = movements => {
+const displayMovements = (movements, sort = false) => {
   containerMovements.innerHTML = '';
 
-  movements.forEach((amt, i) => {
+  const moves = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  moves.forEach((amt, i) => {
     const type = amt > 0 ? 'deposit' : 'withdrawal';
     const html = `<div class="movements__row">
   <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
@@ -191,6 +193,14 @@ btnClose.addEventListener('click', function(e) {
   labelWelcome.textContent = 'Log in to get started';
 });
 
+let sorted = false;
+btnSort.addEventListener('click', function(e) {
+  e.preventDefault()
+
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -251,14 +261,18 @@ console.log(account);
 for (const acc of accounts) acc.owner === 'Jessica Davis' && console.log(acc); */
 
 // flat()
-const overallBalance = accounts
+/* const overallBalance = accounts
 .map(acc => acc.movements)
 .flat()
 .reduce((acc, cur) => acc + cur);
-console.log(overallBalance);
+console.log(overallBalance); */
 
 // flatMap() version; can only go 1 level deep
-const totalBalance = accounts
+/* const totalBalance = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, cur) => acc + cur);
-  console.log(totalBalance);
+  console.log(totalBalance); */
+
+// sort()
+/* movements.sort((a, b) => a - b);
+console.log(movements); */
