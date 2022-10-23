@@ -276,3 +276,22 @@ console.log(overallBalance); */
 // sort()
 /* movements.sort((a, b) => a - b);
 console.log(movements); */
+
+// Array.from
+/* const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z); */
+// 100 dice rolls challenge
+/* const diceRolls100 = Array.from({ length: 100 }, (_, i) => Math.ceil(Math.random() * 6));
+console.log(diceRolls100); */
+// Click on balance total to capture an array of pure numbers from the movements shown in the UI
+/* labelBalance.addEventListener('click', function() {
+  const movementValuesArr = Array.from(document.querySelectorAll('.movements__value'), (ele => +ele.textContent.replace('€', '')));
+
+  console.log(movementValuesArr);
+});  */
+// alternative using spread
+/* labelBalance.addEventListener('click', function() {
+  const movesValuesArr = [...document.querySelectorAll('.movements__value')].map(ele => +ele.textContent.replace('€', ''));
+
+  console.log(movesValuesArr);
+}); */
