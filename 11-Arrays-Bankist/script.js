@@ -295,3 +295,57 @@ console.log(diceRolls100); */
 
   console.log(movesValuesArr);
 }); */
+
+//////////////////////////////////
+// Array Methods Practice
+
+// 1. Get total deposits of all accounts
+/* const totalDeposits = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((acc, cur) => acc + cur);
+
+  console.log('1.', totalDeposits); */
+
+// 2. Count the amount of deposits in the bank that were > 1000
+c/* onst depositsOver1k = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 1000).length;
+  console.log('2.', depositsOver1k);
+// using reduce method
+const depositsOver1kDos = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => cur > 1000 ? ++count : count, 0);
+  console.log('2.', depositsOver1kDos); */
+
+// 3. Use reduce to create and add two properties to an object: the sum of the deposits and withdrawals
+// const sums = accounts
+/* const {deposits, withdrawals} = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((sum, cur) => {
+    // cur > 0 ? sum.deposits += cur : sum.withdrawals += Math.abs(cur);
+    sum[cur > 0 ? 'deposits' : 'withdrawals'] += Math.abs(cur);
+    return sum;
+  }, {deposits: 0, withdrawals:0});
+  console.log('3.', deposits, withdrawals); */
+
+// 4. Use a function to convert a string to a title case given an array of exceptions
+/* const converToTitleCase = function(str) {
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  function capitalize(str) {
+   return str[0].toUpperCase() + str.slice(1);
+  }
+
+  const titleCase = str
+    .toLowerCase()
+    .split(' ')
+    .map(word => exceptions.includes(word) ? word : capitalize(word))
+    .join(' ');
+
+  return capitalize(titleCase);
+};
+console.log(converToTitleCase('this is a nice title'));  
+console.log(converToTitleCase('this is a LONG title but not too long'));  
+console.log(converToTitleCase('and here is another title with an EXAMPLE'));  
+ */
