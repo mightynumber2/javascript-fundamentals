@@ -631,3 +631,62 @@ calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]); */
 
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])); */
+
+//Coding Challenge #4///////////////////
+
+/* const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+  ];
+
+// 1. 
+dogs.forEach(obj => obj.recommendedFood = Math.round(obj.weight ** 0.75 * 28));
+console.log('1.', dogs);
+
+// 2.
+const sarahsDog = dogs.find(obj => obj.owners.includes('Sarah'));
+console.log('2.', sarahsDog);
+console.log(`Sarah's dog is eating too ${sarahsDog.curFood > sarahsDog.recommendedFood ? 'much' : 'little'}`);
+
+// 3.
+const fatDogOwners = dogs
+  .filter(obj => obj.curFood > obj.recommendedFood)
+  .flatMap(obj => obj.owners);
+  console.log('3. Fat dog owners:', fatDogOwners);
+
+const slimDogOwners = dogs
+  .filter(obj => obj.curFood < obj.recommendedFood)
+  .flatMap(obj => obj.owners);
+  console.log('Slim dog owners:', slimDogOwners); */
+
+  /* const [fatDogOwners, slimDogOwners] = dogs
+    .reduce((acc, cur) => {
+      cur.curFood > cur.recommendedFood ? acc[0].push(cur.owners) : acc[1].push(cur.owners)
+      return acc;
+    }, [[], []]);
+  console.log('3.', fatDogOwners.flat(), slimDogOwners.flat()); */
+    
+/* // 4    
+console.log(`4. ${fatDogOwners.join(' and ')}'s dogs eat too much!`)
+console.log(`${slimDogOwners.join(' and ')}'s dogs eat too little!`)
+
+// 5
+const exactlyFood = dogs.some(obj => obj.curFood === obj.recommendedFood);
+console.log('5.', exactlyFood);
+
+// 6
+const okayAmtFood = checkDogs => checkDogs.curFood > checkDogs.recommendedFood * 0.90 && checkDogs.curFood < checkDogs.recommendedFood * 1.10;
+console.log('6.', okayAmtFood(dogs));
+
+// 7
+const getOkayAmt = dogs
+  .filter(okayAmtFood);
+console.log('7.', getOkayAmt);
+
+// 8
+const dogsCopy = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
+console.log('8.', dogsCopy); */

@@ -308,7 +308,7 @@ console.log(diceRolls100); */
   console.log('1.', totalDeposits); */
 
 // 2. Count the amount of deposits in the bank that were > 1000
-c/* onst depositsOver1k = accounts
+/* const depositsOver1k = accounts
   .flatMap(acc => acc.movements)
   .filter(mov => mov > 1000).length;
   console.log('2.', depositsOver1k);
