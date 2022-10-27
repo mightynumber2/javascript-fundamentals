@@ -234,3 +234,11 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+// Using modulus, paint every other, every 3rd
+/* labelBalance.onclick = function() {
+[...document.querySelectorAll('.movements__row')].forEach((row, i) => {
+  // if (i % 2 === 0) row.style.backgroundColor = 'blue';
+  if (i % 3 === 0) row.style.backgroundColor = 'purple';
+});
+}; */
