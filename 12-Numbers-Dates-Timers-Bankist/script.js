@@ -78,16 +78,33 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+// Sort moves with dates function
+const sortMoves = (movs, dates) => {
+  const arrJoined = [], sortedMovs = [], sortedDates = []
+
+  movs.forEach((ele, i) => arrJoined.push([movs[i], dates[i]]))
+  console.log(arrJoined)
+  arrJoined
+    .sort((a, b) => a[0] - b[0])
+    .forEach(ele => {
+      sortedMovs.push(ele[0])
+      sortedDates.push(ele[1])
+    })
+    console.log(sortedMovs, sortedDates);
+  return [sortedMovs, sortedDates]
+};
+
 // Display the account movements in movements container 
 const displayMovements = (acc, sort = false) => {
   containerMovements.innerHTML = '';
 
-  const moves = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  // const moves = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  const [moves, dates] = sort ? sortMoves(acc.movements, acc.movementsDates) : [acc.movements, acc.movementsDates];
 
   moves.forEach((amt, i) => {
     const type = amt > 0 ? 'deposit' : 'withdrawal';
 
-    const date = new Date(acc.movementsDates[i]);
+    const date = new Date(dates[i]);
     const month = `${date.getMonth() + 1}`.padStart(2, 0);
     const day = `${date.getDate()}`.padStart(2, 0);
     const year = date.getFullYear();
