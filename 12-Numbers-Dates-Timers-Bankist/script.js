@@ -107,10 +107,11 @@ const formatMovementsDates = date => {
   if (daysPassed === 1) return 'Yesterday'
   if (daysPassed <= 7) return `${daysPassed} days ago`
 
-  const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  return new Intl.DateTimeFormat(currentAccount.locale).format(date);
+  /* const month = `${date.getMonth() + 1}`.padStart(2, 0);
   const day = `${date.getDate()}`.padStart(2, 0);
   const year = date.getFullYear();
-  return `${month}/${day}/${year}`;
+  return `${month}/${day}/${year}`; */
 }
 
 // Display the account movements in movements container 
@@ -140,7 +141,7 @@ const displayMovements = (acc, sort = false) => {
 // Calculate current balance
 const calcDisplayBalance = function(acc) {
   acc.balance = acc.movements.reduce((acc, cur) => acc + cur);
-  labelBalance.textContent = `$${acc.balance.toFixed(2)}`;
+  labelBalance.textContent = `${acc.balance.toFixed(2)} ${currentAccount.currency}`;
 }
 
 // Display summary: in, out, interest
@@ -148,19 +149,19 @@ const calcDisplaySummary = function(acc) {
   const inTotal = acc.movements
     .filter(amt => amt > 0)
     .reduce((acc, cur) => acc + cur);
-  labelSumIn.textContent = `$${inTotal.toFixed(2)}`;
+  labelSumIn.textContent = `${inTotal.toFixed(2)} ${currentAccount.currency}`;
 
   const outTotal = acc.movements
     .filter(amt => amt < 0)
     .reduce((acc, cur) => acc + cur, 0);
-  labelSumOut.textContent = `$${(Math.abs(outTotal.toFixed(2)))}`;
+  labelSumOut.textContent = `${(Math.abs(outTotal.toFixed(2)))} ${currentAccount.currency}`;
 
   const interest = acc.movements
     .filter(amt => amt > 0)
     .map(amt => amt * (acc.interestRate / 100))
     .filter(int => int >= 1)
     .reduce((acc, cur) => acc + cur, 0);
-  labelSumInterest.textContent = `$${interest.toFixed(2)}`;
+  labelSumInterest.textContent = `${interest.toFixed(2)} ${currentAccount.currency}`;
 };
 
 // Assign a short-hand username for each account
@@ -202,13 +203,23 @@ btnLogin.addEventListener('click', function(e) {
   containerApp.style.opacity = '1';
   // create current balance date
   const now = new Date();
-  const month = `${now.getMonth() + 1}`.padStart(2, 0);
+  const options = {
+    // weekday: 'long',
+    month: '2-digit',
+    day: '2-digit',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric'
+  }
+  labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
+
+  /* const month = `${now.getMonth() + 1}`.padStart(2, 0);
   const day = `${now.getDate()}`.padStart(2, 0);
   const year = now.getFullYear();
   const hour = `${now.getHours()}`.padStart(2, 0);
   const min = `${now.getMinutes()}`.padStart(2, 0);
 
-  labelDate.textContent = `${month}/${day}/${year}, ${hour}:${min}`;
+  labelDate.textContent = `${month}/${day}/${year}, ${hour}:${min}`; */
   // clear input fields, remove focus
   inputLoginUsername.value = inputLoginPin.value = '';
   inputLoginPin.blur();
