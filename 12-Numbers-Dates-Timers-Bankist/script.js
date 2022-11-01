@@ -267,9 +267,11 @@ btnLoan.addEventListener('click', function(e) {
   inputLoanAmount.value = '';
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.10)) {
-    currentAccount.movements.push(amount);
-    currentAccount.movementsDates.push(new Date().toISOString());
-    updateCurrency();
+    setTimeout(() => {
+      currentAccount.movements.push(amount);
+      currentAccount.movementsDates.push(new Date().toISOString());
+      updateCurrency();
+    }, 3000)
   }
 });
 
@@ -323,3 +325,28 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
   if (i % 3 === 0) row.style.backgroundColor = 'purple';
 });
 }; */
+
+// Practice: set a ticking clock in the console using the interval method
+
+// new Date method
+/* setInterval(function() {
+  const now = new Date();
+  const hours = `${now.getHours()}`.padStart(2, 0);
+  const mins = `${now.getMinutes()}`.padStart(2, 0);
+  const secs = `${now.getSeconds()}`.padStart(2, 0);
+
+  console.log(`${hours}:${mins}:${secs}`);
+}, 1000) */
+
+// new Intl method
+/* setInterval(() => {
+  const options = {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  }
+
+  const tickNow = new Intl.DateTimeFormat('en-US', options).format(new Date())
+
+  console.log(tickNow);
+}, 1000) */
