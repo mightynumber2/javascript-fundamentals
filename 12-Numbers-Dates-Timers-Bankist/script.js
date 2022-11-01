@@ -114,6 +114,16 @@ const formatMovementsDates = date => {
   return `${month}/${day}/${year}`; */
 }
 
+// Display proper currency type
+const currencyType = amt => {
+  const options = {
+    style: 'currency',
+    currency: currentAccount.currency,
+  }
+
+  return new Intl.NumberFormat(currentAccount.locale, options).format(amt);
+}
+
 // Display the account movements in movements container 
 const displayMovements = (acc, sort = false) => {
   containerMovements.innerHTML = '';
@@ -126,12 +136,12 @@ const displayMovements = (acc, sort = false) => {
 
     const date = new Date(dates[i]);
     const displayDate = formatMovementsDates(date);
-    
+
     const html = `
       <div class="movements__row">
       <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
       <div class="movements__date">${displayDate}</div>
-      <div class="movements__value">${amt.toFixed(2)}</div>
+      <div class="movements__value">${currencyType(amt)}</div>
       </div>
     `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -141,7 +151,7 @@ const displayMovements = (acc, sort = false) => {
 // Calculate current balance
 const calcDisplayBalance = function(acc) {
   acc.balance = acc.movements.reduce((acc, cur) => acc + cur);
-  labelBalance.textContent = `${acc.balance.toFixed(2)} ${currentAccount.currency}`;
+  labelBalance.textContent = `${currencyType(acc.balance)}`;
 }
 
 // Display summary: in, out, interest
@@ -149,19 +159,19 @@ const calcDisplaySummary = function(acc) {
   const inTotal = acc.movements
     .filter(amt => amt > 0)
     .reduce((acc, cur) => acc + cur);
-  labelSumIn.textContent = `${inTotal.toFixed(2)} ${currentAccount.currency}`;
+  labelSumIn.textContent = `${currencyType(inTotal)}`;
 
   const outTotal = acc.movements
     .filter(amt => amt < 0)
     .reduce((acc, cur) => acc + cur, 0);
-  labelSumOut.textContent = `${(Math.abs(outTotal.toFixed(2)))} ${currentAccount.currency}`;
+  labelSumOut.textContent = `${currencyType((Math.abs(outTotal)))}`;
 
   const interest = acc.movements
     .filter(amt => amt > 0)
     .map(amt => amt * (acc.interestRate / 100))
     .filter(int => int >= 1)
     .reduce((acc, cur) => acc + cur, 0);
-  labelSumInterest.textContent = `${interest.toFixed(2)} ${currentAccount.currency}`;
+  labelSumInterest.textContent = `${currencyType(interest)}`;
 };
 
 // Assign a short-hand username for each account
