@@ -193,13 +193,42 @@ const updateCurrency = function() {
   calcDisplaySummary(currentAccount);
 };
 
+// Logout timer
+const logoutTimer = function() {
+
+  const tick = function() {
+    const min = String(Math.trunc(startTime / 60)).padStart(2, 0);
+    const sec = String(startTime % 60).padStart(2, 0);
+    startTime--;
+
+    if (startTime < 0) {
+      labelWelcome.textContent = 'Log in to get started';
+      containerApp.style.opacity = '0';
+      clearInterval(timer);
+    }
+
+    labelTimer.textContent = `${min}:${sec}`;
+  }
+
+  let startTime = 300;
+  
+  tick();
+  return timer = setInterval(tick, 1000)
+}
+
+// Reset logout timer
+const resetTimer = function() {
+  if (timer) clearInterval(timer);
+  timer = logoutTimer();
+}
+
 // EVENT HANDLERS ///////////////////
-let currentAccount;
+let currentAccount, timer;
 
 // FAKE ALWAYS LOGGED IN
-currentAccount = account1;
-updateCurrency();
-containerApp.style.opacity = '1';
+// currentAccount = account1;
+// updateCurrency();
+// containerApp.style.opacity = '1';
 
 // Login with credentials
 btnLogin.addEventListener('click', function(e) {
@@ -222,7 +251,6 @@ btnLogin.addEventListener('click', function(e) {
     minute: 'numeric'
   }
   labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
-
   /* const month = `${now.getMonth() + 1}`.padStart(2, 0);
   const day = `${now.getDate()}`.padStart(2, 0);
   const year = now.getFullYear();
@@ -233,8 +261,10 @@ btnLogin.addEventListener('click', function(e) {
   // clear input fields, remove focus
   inputLoginUsername.value = inputLoginPin.value = '';
   inputLoginPin.blur();
-
+  // update UI
   updateCurrency();
+  // login Timer
+  resetTimer();
   }
 });
 
@@ -255,6 +285,7 @@ btnTransfer.addEventListener('click', function(e) {
     transferToAccount.movements.push(amount);
     transferToAccount.movementsDates.push(new Date().toISOString());
     updateCurrency();
+    resetTimer();
   }
 });
 
@@ -271,6 +302,7 @@ btnLoan.addEventListener('click', function(e) {
       currentAccount.movements.push(amount);
       currentAccount.movementsDates.push(new Date().toISOString());
       updateCurrency();
+      resetTimer();
     }, 3000)
   }
 });
@@ -287,6 +319,7 @@ btnClose.addEventListener('click', function(e) {
     accounts.splice(index, 1);
     containerApp.style.opacity = '0';
     window.scrollTo(0, 0);
+    resetTimer();
   };
 
   inputCloseUsername.value = inputClosePin.value = '';
