@@ -36,10 +36,11 @@ document.addEventListener('keydown', function (e) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// NOTES//
 // Select parts of the document////////////////////////////
 /* console.log(document.documentElement) // entire document, html
 console.log(document.head)
-console.log(document.body) */
+console.log(document.body)
 // Selects all as NODES; more modern way to select
 const header = document.querySelector('.header')
 const allSections = document.querySelectorAll('.section')
@@ -76,11 +77,11 @@ document.querySelector('.btn--close--cookie').addEventListener('click', function
 message.style.background = '#37383d'
 message.style.width = '120%'
 // cannot access styles this way
-/* console.log(message.style.color)
-console.log(message.style.backgroundColor) */
+console.log(message.style.color)
+console.log(message.style.backgroundColor)
 // rather this way
-/* console.log(getComputedStyle(message).color)
-console.log(getComputedStyle(message).height) */
+console.log(getComputedStyle(message).color)
+console.log(getComputedStyle(message).height)
 
 message.style.height = Number.parseFloat(getComputedStyle(message).height) + 40 + 'px'
 
@@ -115,4 +116,26 @@ logo.classList.remove('c', 'd')
 logo.classList.toggle()
 logo.classList.contains() // not includes!
 // do not use; it overrides existing classes
-logo.className = 'b';
+logo.className = 'b'; */
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Smooth Scrolling
+const btnScrollTo = document.querySelector('.btn--scroll-to')
+const section1 = document.getElementById('section--1')
+
+btnScrollTo.addEventListener('click', function() {
+  // Store coordinates of section 1
+  const s1coords = section1.getBoundingClientRect()
+  
+  // window.scrollTo(s1coords.left + window.pageXOffset, s1coords.top + window.pageYOffset)
+
+  // smoothly scroll to section 1's viewport coordinates plus the offset of the left and top of the page for older browsers
+  /* window.scrollTo({
+    left: s1coords.left + window.pageXOffset, 
+    top: s1coords.top + window.pageYOffset,
+    behavior: "smooth"
+  }) */
+
+  // For modern browsers
+  section1.scrollIntoView({behavior: 'smooth'})
+})
