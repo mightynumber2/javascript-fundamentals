@@ -117,9 +117,10 @@ logo.classList.toggle()
 logo.classList.contains() // not includes!
 // do not use; it overrides existing classes
 logo.className = 'b'; */
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Smooth Scrolling
+// SMOOTH SCROLLING
 const btnScrollTo = document.querySelector('.btn--scroll-to')
 const section1 = document.getElementById('section--1')
 
@@ -139,3 +140,22 @@ btnScrollTo.addEventListener('click', function() {
   // For modern browsers
   section1.scrollIntoView({behavior: 'smooth'})
 })
+
+// TYPES OF EVENTS AND EVENT HANDLERS
+const h1 = document.querySelector('h1')
+
+const alertMouse = function(e) {
+  alert('addEventListener: Hands off the h1!')
+
+  // h1.removeEventListener('mouseenter', alertMouse)
+}
+
+// Modern, flexible way to handle event listeners
+h1.addEventListener('mouseenter', alertMouse)
+
+setTimeout(() => h1.removeEventListener('mouseenter', alertMouse), 5000)
+
+// Old way
+// h1.onmouseenter = function(e) {
+//   alert('addEventListener: Hands off the h1!')
+// }
