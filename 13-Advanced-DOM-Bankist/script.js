@@ -120,7 +120,7 @@ logo.className = 'b'; */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// SMOOTH SCROLLING
+// SMOOTH SCROLLING////////////////////////////////////////
 const btnScrollTo = document.querySelector('.btn--scroll-to')
 const section1 = document.getElementById('section--1')
 
@@ -141,8 +141,8 @@ btnScrollTo.addEventListener('click', function() {
   section1.scrollIntoView({behavior: 'smooth'})
 })
 
-// TYPES OF EVENTS AND EVENT HANDLERS
-const h1 = document.querySelector('h1')
+// TYPES OF EVENTS AND EVENT HANDLERS//////////////////////
+/* const h1 = document.querySelector('h1')
 
 const alertMouse = function(e) {
   alert('addEventListener: Hands off the h1!')
@@ -153,9 +153,35 @@ const alertMouse = function(e) {
 // Modern, flexible way to handle event listeners
 h1.addEventListener('mouseenter', alertMouse)
 
-setTimeout(() => h1.removeEventListener('mouseenter', alertMouse), 5000)
+setTimeout(() => h1.removeEventListener('mouseenter', alertMouse), 5000) */
 
 // Old way
 // h1.onmouseenter = function(e) {
 //   alert('addEventListener: Hands off the h1!')
 // }
+
+// EVEN PROPAGATION IN PRACTICE
+// rgb(255, 255, 255)
+
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+const randomColor = () => `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`
+
+document.querySelector('.nav__link').addEventListener('click', function(e) {
+  this.style.background = randomColor()
+  // e.target is the event being clicked
+  console.log('LINK', e.target, e.currentTarget)
+  // e.currentTarget === this
+
+  // Stop propagation from bubbling up
+  // e.stopPropagation()
+  // not a great idea to use in practice
+})
+document.querySelector('.nav__links').addEventListener('click', function(e) {
+  this.style.background = randomColor()
+  console.log('CONTAINER', e.target, e.currentTarget)
+})
+document.querySelector('.nav').addEventListener('click', function(e) {
+  this.style.background = randomColor()
+  console.log('NAV', e.target, e.currentTarget)
+}, true)
+// 'true' toggles listening during the first 'CAPTURING' phase, rather than the last default 'BUBBLING" phase
